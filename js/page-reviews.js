@@ -63,7 +63,7 @@ const data = [
     username: 'Екатерина',
     location: 'Москва, Россия',
     imgSrc: './images/reviews/unknown_user.png',
-    videoSrc: './video/ekaterina.mp4',
+    videoSrc: 'https://www.dropbox.com/s/hrhfpah84otz24b/ekaterina.mp4?dl=0',
     // comment: `
     // Мы с сестрой ездили в Аюрведу Бхаван осенью 2022 года по совету друзей.
     // Это был великолепный, мягкий детокс всего организма!
