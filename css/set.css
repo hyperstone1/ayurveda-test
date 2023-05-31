@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*Light*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 300;
+  src: url('../fonts/myriad-pro/MyriadPro-LightSemiExt.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt.svg#svgFontName') format('svg');
+}
+/*Light - italic*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 300;
+  font-style: italic;
+  src: url('../fonts/myriad-pro/MyriadPro-LightSemiExt-It.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt-It.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt-It.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-LightSemiExt-It.svg#svgFontName') format('svg');
+}
+/*Regular*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 400;
+  src: url('../fonts/myriad-pro/MyriadPro-Regular.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Regular.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Regular.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Regular.svg#svgFontName') format('svg');
+}
+/*Regular - italic*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/myriad-pro/MyriadPro-Regular-It.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Regular-It.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Regular-It.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Regular-It.svg#svgFontName') format('svg');
+}
+/*Semibold*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 500;
+  src: url('../fonts/myriad-pro/MyriadPro-Semibold.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold.svg#svgFontName') format('svg');
+}
+/*Semibold - italic*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 500;
+  font-style: italic;
+  src: url('../fonts/myriad-pro/MyriadPro-Semibold-It.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold-It.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold-It.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Semibold-It.svg#svgFontName') format('svg');
+}
+/*Bold*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 700;
+  src: url('../fonts/myriad-pro/MyriadPro-Bold.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Bold.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Bold.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Bold.svg#svgFontName') format('svg');
+}
+/*Bold - italic*/
+@font-face {
+  font-family: 'myriad-pro';
+  font-weight: 700;
+  font-style: italic;
+  src: url('../fonts/myriad-pro/MyriadPro-Bold-It.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Bold-It.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Bold-It.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Bold-It.svg#svgFontName') format('svg');
+}
+/*Condensed*/
+@font-face {
+  font-family: 'myriad-pro cond';
+  src: url('../fonts/myriad-pro/MyriadPro-Cond.eot?') format('eot'),
+    url('../fonts/myriad-pro/MyriadPro-Cond.woff') format('woff'),
+    url('../fonts/myriad-pro/MyriadPro-Cond.ttf') format('truetype'),
+    url('../fonts/myriad-pro/MyriadPro-Cond.svg#svgFontName') format('svg');
+}
+html {
+  font-size: 0.5208335vw;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-animation: bugfix infinite 1s;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* font-family: 'myriad-pro'; */
+  font-family: 'myriad-pro';
+  font-style: normal;
+  font-weight: normal;
+  -webkit-animation: bugfix infinite 1s;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  color: #262525;
+  background-color: #ffffff;
+}
+
+input,
+textarea {
+  -webkit-animation: bugfix infinite 1s;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+a {
+  color: unset;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+}
+textarea:focus {
+  outline: none;
+}
+textarea:active {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  padding: 0;
+  background-color: transparent;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 83.3%;
+  margin: 0 auto;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+section {
+  margin-bottom: 18rem;
+}
+
+@media (max-width: 48em) {
+  html {
+    font-size: 5px;
+    font-size: 1.5625vw;
+    font-size: calc((100 / 375) * 5vw);
+    -webkit-text-size-adjust: none;
+  }
+
+  body {
+    -webkit-text-size-adjust: none;
+  }
+
+  .container {
+    padding: 0 4rem;
+    width: 100%;
+  }
+}

@@ -1,0 +1,70 @@
+.footer {
+  background: #22262a;
+  padding: 3.6rem 0px;
+}
+.footer_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__logo {
+  width: 11.51vw;
+  height: 100%;
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 3.1rem;
+}
+.footer_contacts {
+  color: #ffffff;
+  font-size: 0.9375vw;
+  line-height: 1.2;
+  text-align: right;
+}
+.footer-soc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /*Убрать марджины,когда буду менять style.css*/
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.footer-number {
+  font-weight: 400;
+}
+.footer-soc svg {
+  height: 1.5625vw;
+  width: 1.5625vw;
+}
+address {
+  font-style: normal;
+}
+.footer-schedule {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 48em) {
+  .footer_container {
+    flex-wrap: wrap;
+    row-gap: 3rem;
+  }
+  .footer__logo {
+    width: 35.466vw;
+    order: 1;
+  }
+  .footer-soc svg {
+    width: 6.4vw;
+    height: 6.4vw;
+  }
+  .footer__social {
+    order: 3;
+    margin-left: auto;
+  }
+  .footer_contacts {
+    font-size: 4vw;
+    order: 2;
+  }
+}

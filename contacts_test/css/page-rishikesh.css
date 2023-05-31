@@ -1,0 +1,15 @@
+#header-block {
+	width: 100%;
+	height: 1018px;
+	background: url('../images/header-rishikesh.jpg') no-repeat center;
+}
+
+
+#b1-gallery {
+	max-width: 612px;
+}
+@media(min-width: 1200px) {
+	#b1-gallery {
+		/*margin-left: 60px;*/
+	}
+}

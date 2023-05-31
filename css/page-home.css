@@ -1,0 +1,137 @@
+.home {
+}
+.home_wrapper {
+  padding-top: 19rem;
+  display: flex;
+}
+.wrapper__title {
+}
+.wrapper__title-title {
+  width: 28.8541666vw;
+  font-weight: 300;
+  font-size: 5.416666vw;
+  line-height: 1.2;
+  color: #22262a;
+}
+.wrapper__title-subtitle {
+  padding-bottom: 13.6rem;
+  font-weight: 400;
+  font-size: 0.9375vw;
+  line-height: 1.3;
+  color: rgba(34, 38, 42, 0.6);
+}
+.wrapper__title-title .ayurveda {
+  color: #b0008e;
+}
+.wrapper__title-img {
+  position: absolute;
+  left: 0;
+  top: 400px;
+}
+.wrapper__img {
+  position: absolute;
+  width: 56.09375vw;
+  top: 0;
+  right: 0;
+}
+.wrapper__slider {
+  position: relative;
+}
+.swiper-container {
+  width: 28.8541666vw;
+  overflow: hidden;
+}
+.services__item-category {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 125%;
+  color: #22262a;
+  padding-bottom: 3rem;
+}
+.services__item-booking {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 129%;
+  color: #b0008e;
+}
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative !important;
+  top: 0px !important;
+  height: fit-content;
+  text-align: inherit !important;
+  padding-bottom: 30px;
+}
+.swiper-navigation {
+  display: flex;
+  gap: 3.7rem;
+  padding-top: 7.1rem;
+}
+.swiper-navigation:after {
+  content: '';
+  position: absolute;
+  width: 2.708333vw;
+  height: 1px;
+  background-color: #00000075;
+  transform: rotate(287deg);
+  left: 2.5rem;
+  bottom: 2.5rem;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: '' !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative !important;
+  margin-top: 0 !important;
+  right: inherit !important;
+  left: inherit !important;
+}
+.current-total {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  background: rgba(34, 38, 42, 0.6);
+  height: 1px;
+}
+
+.home_info__card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 38.59375vw;
+  color: #22262a;
+  font-weight: 300;
+}
+.card__text-title {
+  font-size: 4.166666vw;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+.card__text-description {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.5625vw;
+  line-height: 1.25;
+}
+
+.card__img {
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.img_woman img {
+  height: auto;
+}

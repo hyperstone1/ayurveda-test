@@ -1,0 +1,100 @@
+#page-clinic .header-block {
+	display: block;
+}
+#page-clinic .page-header {
+	padding-left: 0;
+	padding-right: 0;
+}
+#page-clinic .page-prettl {
+	margin-bottom: 6px;
+}
+#page-clinic .page-ttl {
+	margin-bottom: 34px;
+}
+#page-clinic .page-p {
+	font-size: 18px;
+}
+
+#block-1 {
+	width: 100%;
+	height: 982px;
+	background: url('../images/clinic-b1.jpg') no-repeat center;
+	padding-top: 210px;
+}
+#block-1 .page-header {
+	text-align: left;
+}
+@media(min-width: 1300px) {
+	#block-1 .container {
+		width: 1224px;
+	}
+}
+
+#block-2 {
+	width: 100%;
+	height: 1068px;
+	background: url('../images/clinic-b2.jpg') no-repeat center;
+	padding-top: 80px;
+}
+@media(min-width: 1500px) {
+	#block-2 .container {
+		width: 1412px;
+	}
+}
+#block-2 .page-header {
+	max-width: 582px;
+	margin-left: auto;
+	margin-right: 0;
+	color: #000;
+}
+@media(max-width: 991px) {
+	#block-2 .page-header {
+		color: #fff;
+	}
+}
+
+
+@media(min-width: 1400px) {
+	#block-3 .container {
+		width: 1334px;
+	}
+}
+#block-3 .content-block {
+	padding-top: 50px;
+	padding-bottom: 0;
+}
+@media(min-width: 992px) {
+	#block-3 .block-ttl {
+		font-size: 60px;
+		line-height: 60px;
+		margin-bottom: 80px;
+	}
+}
+.staff-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+@media(max-width: 1199px) {
+	.staff-container {
+		justify-content: center;
+	}
+}
+.staff-box {
+	width: 296px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+.staff-position {
+	color: #9b9692;
+	font-size: 12px;
+	line-height: 12px;
+	text-transform: uppercase;
+	margin-top: 30px;
+	margin-bottom: 8px;
+}
+.staff-name {
+	font-size: 24px;
+}

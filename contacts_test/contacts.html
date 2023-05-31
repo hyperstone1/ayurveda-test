@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/set.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/page-contacts.css" />
+    <script src="js/page-contacts.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>Контакты</title>
+  </head>
+  <body id="page-contacts">
+    <!-- Верхнее меню -->
+    <header class="header">
+      <div class="header_container container">
+        <div class="burger-menu">
+          <input type="checkbox" id="burger-checkbox" class="burger-checkbox" />
+          <label for="burger-checkbox" class="burger-icon"></label>
+        </div>
+        <div class="header_logo">
+          <a href="index.html" id="header_logo">
+            <img src="images/logo.png" />
+            <img src="images/logo_header_1.png" alt="" />
+          </a>
+        </div>
+        <div class="header_menu">
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input
+                  class="select-box__input"
+                  type="radio"
+                  id="0"
+                  value="1"
+                  name="Ben"
+                  checked="checked"
+                />
+                <p class="select-box__input-text">Ru</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="1" value="2" name="Ben" />
+                <p class="select-box__input-text">En</p>
+              </div>
+              <div class="select-box__icon">
+                <svg
+                  width="12"
+                  height="6"
+                  viewBox="0 0 12 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.25 0.666678L6 5.33334L0.75 0.666677"
+                    stroke="#22262A"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <ul class="select-box__list">
+              <li>
+                <label class="select-box__option" for="0" aria-hidden="aria-hidden">Ru</label>
+              </li>
+              <li>
+                <label class="select-box__option" for="1" aria-hidden="aria-hidden">En</label>
+              </li>
+            </ul>
+          </div>
+          <div class="menu">
+            <nav id="navbar">
+              <a href="panchakarma.html" class="menu-nav-link">Панчакарма</a>
+              <a href="booking.html" class="menu-nav-link">Бронирование</a>
+              <a href="clinic.html" class="menu-nav-link">Цены</a>
+              <a href="reviews.html" class="menu-nav-link">Отзывы</a>
+              <a href="contacts.html" class="menu-nav-link active">Контакты</a>
+            </nav>
+            <div class="menu_user">
+              <a href="tel:+74954111475" class="menu_user-phone">+7 (495) 411-14-75</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu-column">
+          <div class="container">
+            <nav class="mobile-nav">
+              <ul class="nav-list">
+                <li class="">
+                  <a href="panchakarma.html" class="menu-nav-link nav-item">Панчакарма</a>
+                </li>
+                <li class="">
+                  <a href="booking.html" class="menu-nav-link nav-item">Бронирование</a>
+                </li>
+                <li class=""><a href="clinic.html" class="menu-nav-link nav-item">Цены</a></li>
+                <li class=""><a href="reviews.html" class="menu-nav-link nav-item">Отзывы</a></li>
+                <li class="">
+                  <a href="contacts.html" class="menu-nav-link nav-item active">Контакты</a>
+                </li>
+              </ul>
+              <div class="menu_user">
+                <a href="tel:+74954111475" class="menu_user-phone">+7 (495) 411-14-75</a>
+              </div>
+            </nav>
+            <nav class="mobile-nav lang-menu">
+              <ul class="nav-list">
+                <li class="nav-item">
+                  <label class="lang active-lang" for="0" aria-hidden="aria-hidden">Ru</label>
+                </li>
+                <li class="nav-item">
+                  <label class="lang" for="1" aria-hidden="aria-hidden">En</label>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /Верхнее меню -->
+    <div id="wrapper">
+      <!-- Контент -->
+      <!-- Блок-1 -->
+      <section class="contacts" id="block-1">
+        <div class="contacts__title">Контакты</div>
+        <div class="contacts__info">
+          <div class="contacts__address container">
+            <div class="address">
+              <div class="address-title">Our address</div>
+              <div class="address-info">
+                <span>
+                  <p>Ganga Vatika-II</p>
+                  <p>House C-30-31, Muni-Ki-Reti Rishikesh - 249192</p>
+                  <p>(Uttarakhand)</p>
+                </span>
+              </div>
+            </div>
+            <div class="address">
+              <div class="address-title">Rishikesh, India</div>
+              <div class="address-info">
+                <span>
+                  <p>Manager in Rishikesh</p>
+                  <div class="phone">
+                    Tel:
+                    <span id="phone1" class="link_underline tel">+91 94111 70669 </span> — Puja
+                    <div class="tooltip">
+                      <span class="tooltiptext" id="phone1-tooltip"></span>
+                    </div>
+                  </div>
+                  <p>( WhatsApp,Telegram)</p>
+                  <p>
+                    E-Mail:
+                    <a href="mailto:booking@ayurveda-bhavan.com" class="link_underline"
+                      >booking@ayurveda-bhavan.com</a
+                    >
+                  </p>
+                </span>
+              </div>
+            </div>
+            <div class="address">
+              <div class="address-title">Москва, Россия</div>
+              <div class="address-info">
+                <span>
+                  <p>Менеджер в России</p>
+                  <div class="phone">
+                    Тел.
+                    <span id="phone2" class="link_underline tel">+79857624368</span> — Ольга
+                    <div class="tooltip">
+                      <span class="tooltiptext" id="phone2-tooltip"></span>
+                    </div>
+                  </div>
+                  <p>(WhatsApp, Telegram)</p>
+                  <p>
+                    E-Mail :
+                    <a href="mailto:olga@vorobiev.ru" class="link_underline">olga@vorobiev.ru</a>
+                  </p>
+                </span>
+              </div>
+            </div>
+            <div class="address">
+              <div class="address-title">Madrid, Spain</div>
+              <div class="address-info">
+                <span>
+                  <p>Gestor de España — Juan Tafur</p>
+                  <div class="phone">
+                    Teléfono: <span id="phone3" class="link_underline tel">+34 636 20 25 16</span>
+                    <div class="tooltip">
+                      <span class="tooltiptext" id="phone3-tooltip"></span>
+                    </div>
+                  </div>
+
+                  <p>(WhatsApp)</p>
+                  <p>
+                    E-mail:
+                    <a href="mailto:juantafur@hotmail.com" class="link_underline"
+                      >juantafur@hotmail.com</a
+                    >
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="contacts__location">
+            <div class="location_info">
+              <div class="location_info-title">Как добраться</div>
+            </div>
+            <div class="location_info__phones">
+              <h6 class="phones-title">На любой случай</h6>
+              <span class="phones-info">
+                Телефоны ( Whatsapp ) менеджера в клинике (говорит на английском и хинди):
+                <ul class="phones">
+                  <li>+91 89798 10333</li>
+                  <li>+91 94129 16031</li>
+                </ul>
+              </span>
+            </div>
+            <div class="location__content">
+              <div class="location__content-title">Рейсы прямые, цены разумные</div>
+              <div class="location__content-info">
+                <span class="info-text">
+                  <p>
+                    Самолёты в Дели , аэропорт имени Индиры Ганди ( DEL). Большинство международных
+                    рейсов ( включая Аэрофлот) прилетает в Терминал 3 (Т3).
+                  </p>
+                  <p>
+                    Прямые рейсы из Москвы ежедневно. Есть рейсы и из других городов РФ. Также есть
+                    рейсы с пересадками в Ташкенте , Астане , и т. д . Билеты в обе стороны
+                    обойдутся от 35 000 рублей.
+                  </p>
+                  <span>
+                    Ближайший к нам аэропорт города Дехрадун ( Dehradun , DED), от него примерно 25
+                    минут езды на машине до клиники (организуем трансфер).
+                    <p>
+                      Из Дели ( Delhi , DEL) есть прямые рейсы , начиная с 7 утра . Время в полёте 1
+                      час.
+                    </p>
+                  </span>
+                  <p>
+                    Стоимость билетов от 4000 руб в одну сторону , бесплатный провоз багажа 15 кг.
+                    При покупки билетов проверьте номер терминала вылета из Дели. Большинство рейсов
+                    вылетает из Терминала 1 (30 минут на машине от Т3) или Терминала 2 (10 минут
+                    пешком от Т3). Также есть прямые рейсы в Дехрадун (DED) из других аэропортов
+                    Индии, например, Мумбаи.
+                  </p>
+                  <p>
+                    Мы поможем организовать трансфер из аэропорта (отеля) Дели ~ 4,5 часа на
+                    комфортабельной машине, цены около 120 долларов за машину (джип 3-4 человека ).
+                    Цены и тип машины, пожалуйста, уточняйте.
+                  </p>
+                </span>
+              </div>
+            </div>
+            <div class="location__content">
+              <div class="location__content-title short-title">
+                Как доехать Из Ришикеша, Дехрадуна или Харидвара в «Аюрведа Бхаван».
+              </div>
+              <div class="location__content-info">
+                <span class="info-text">
+                  <p>
+                    Попросите водителя привести вас в Ганга Ватика 2 в Ришикеш (Ganga Vatika 2,
+                    Rishikesh). Большинство водителей говорят на английском, но убедитесь, что он
+                    понял и забил адрес в Гугл картах. В посёлке Ganga Vatika 2 найдёте коттедж С30,
+                    все знают нашу клинику, найти легко.
+                  </p>
+                  <p>
+                    Точный адрес: Ganga -Vatika 2, cottage C30 , Muni-Ki-Reti , Rishikesh (также вам
+                    понадобится при заполнении анкеты на границе)
+                  </p>
+                  <span>
+                    Также в Гугл Картах (Google Maps) можно забить:
+                    <p>Ayurveda Bhavan At Rishikesh</p>
+                    <p>В Яндексе (менее удобно):</p>
+                    <p>Аюрведа Бхаван</p>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="map">
+            <div class="discont">
+              <div class="discont__img">
+                <img src="./images/contacts/discont.png" alt="discont" />
+              </div>
+              <div class="discont__info">
+                <div class="info__title">Скидка -12%</div>
+                <div class="info__text">Акция на лето при покупке базового пакета</div>
+                <div class="info__book">
+                  <button class="book-btn">Забронировать</button>
+                </div>
+              </div>
+              <div class="discont__close">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.7147 12.7145L1.28613 1.28595M12.7147 1.28595L1.28613 12.7145"
+                    stroke="#22262A"
+                    stroke-opacity="0.6"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d725.4822862314934!2d78.30816666753071!3d30.122962677978094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sby!4v1684398052537!5m2!1sru!2sby"
+              width="1600"
+              height="641"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- /Контент -->
+      <!-- Футер -->
+      <footer class="footer">
+        <div class="footer_container container">
+          <div class="footer__logo">
+            <img src="images/footer-logo.png" />
+          </div>
+          <div class="footer__social">
+            <a href="#" class="footer-soc">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.8287 6.98403H21V3.16804C19.9487 3.05445 18.8924 2.99837 17.8354 3.00004C14.6939 3.00004 12.5457 4.99203 12.5457 8.64003V11.784H9V16.056H12.5457V27H16.796V16.056H20.3301L20.8614 11.784H16.796V9.06003C16.796 7.80003 17.1193 6.98403 18.8287 6.98403Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <a href="contacts.html" class="footer-soc">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.8 27C3.03 27 2.3706 26.706 1.8218 26.118C1.273 25.53 0.999069 24.824 1 24V6C1 5.175 1.2744 4.4685 1.8232 3.8805C2.372 3.2925 3.03094 2.999 3.8 3H26.2C26.97 3 27.6294 3.294 28.1782 3.882C28.727 4.47 29.0009 5.176 29 6V24C29 24.825 28.7256 25.5315 28.1768 26.1195C27.628 26.7075 26.9691 27.001 26.2 27H3.8ZM15 16.2375C15.1167 16.2375 15.2394 16.2185 15.3682 16.1805C15.497 16.1425 15.6193 16.0865 15.735 16.0125L25.64 9.375C25.8267 9.25 25.9667 9.0935 26.06 8.9055C26.1533 8.7175 26.2 8.5115 26.2 8.2875C26.2 7.7875 26.0017 7.4125 25.605 7.1625C25.2083 6.9125 24.8 6.925 24.38 7.2L15 13.5L5.62 7.2C5.2 6.925 4.79167 6.919 4.395 7.182C3.99834 7.445 3.8 7.8135 3.8 8.2875C3.8 8.5375 3.84667 8.7565 3.94 8.9445C4.03333 9.1325 4.17334 9.276 4.36 9.375L14.265 16.0125C14.3817 16.0875 14.5044 16.144 14.6332 16.182C14.762 16.22 14.8843 16.2385 15 16.2375Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer-soc">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.7334 2.50123C16.609 2.49787 17.4847 2.50667 18.3601 2.52763L18.5929 2.53603C18.8616 2.54563 19.1268 2.55763 19.4472 2.57203C20.724 2.63203 21.5952 2.83362 22.3595 3.13001C23.1515 3.4348 23.8187 3.84759 24.4859 4.51476C25.0959 5.11427 25.568 5.83945 25.8694 6.63989C26.1658 7.40427 26.3674 8.27664 26.4274 9.55339C26.4418 9.87258 26.4538 10.139 26.4634 10.4078L26.4706 10.6406C26.4919 11.5156 26.5011 12.3908 26.4982 13.2661L26.4994 14.1612V15.7332C26.5023 16.6088 26.4931 17.4845 26.4718 18.3599L26.4646 18.5927C26.455 18.8615 26.443 19.1267 26.4286 19.4471C26.3686 20.7238 26.1646 21.595 25.8694 22.3594C25.569 23.1606 25.0968 23.8864 24.4859 24.4857C23.8858 25.0956 23.1603 25.5678 22.3595 25.8692C21.5952 26.1656 20.724 26.3672 19.4472 26.4272C19.1268 26.4416 18.8616 26.4536 18.5929 26.4632L18.3601 26.4704C17.4847 26.4917 16.609 26.5009 15.7334 26.498L14.8382 26.4992H13.2674C12.3918 26.5022 11.5161 26.493 10.6407 26.4716L10.4079 26.4644C10.1231 26.4541 9.83828 26.4421 9.55356 26.4284C8.27681 26.3684 7.40564 26.1644 6.64006 25.8692C5.83931 25.5685 5.114 25.0963 4.51494 24.4857C3.90421 23.886 3.43164 23.1604 3.13018 22.3594C2.83379 21.595 2.6322 20.7238 2.5722 19.4471C2.55884 19.1623 2.54684 18.8775 2.5362 18.5927L2.5302 18.3599C2.50808 17.4845 2.49808 16.6088 2.5002 15.7332V13.2661C2.49686 12.3908 2.50566 11.5156 2.5266 10.6406L2.535 10.4078C2.5446 10.139 2.5566 9.87258 2.571 9.55339C2.631 8.27544 2.83259 7.40547 3.12898 6.63989C3.43062 5.83906 3.90411 5.11408 4.51614 4.51596C5.11479 3.90489 5.83964 3.43189 6.64006 3.13001C7.40564 2.83362 8.27561 2.63203 9.55356 2.57203L10.4079 2.53603L10.6407 2.53003C11.5157 2.50792 12.391 2.49792 13.2662 2.50003L15.7334 2.50123ZM14.4998 8.50103C13.7048 8.48978 12.9156 8.63665 12.1778 8.93309C11.4401 9.22954 10.7687 9.66964 10.2026 10.2278C9.63641 10.786 9.18686 11.4512 8.88001 12.1846C8.57317 12.9181 8.41515 13.7052 8.41515 14.5002C8.41515 15.2953 8.57317 16.0824 8.88001 16.8158C9.18686 17.5493 9.63641 18.2144 10.2026 18.7726C10.7687 19.3308 11.4401 19.7709 12.1778 20.0674C12.9156 20.3638 13.7048 20.5107 14.4998 20.4994C16.091 20.4994 17.6171 19.8673 18.7423 18.7421C19.8675 17.6169 20.4996 16.0909 20.4996 14.4996C20.4996 12.9084 19.8675 11.3823 18.7423 10.2571C17.6171 9.13195 16.091 8.50103 14.4998 8.50103ZM14.4998 10.9009C14.978 10.8921 15.4531 10.9787 15.8975 11.1556C16.3419 11.3325 16.7465 11.5961 17.0878 11.9312C17.4292 12.2662 17.7003 12.6659 17.8854 13.1069C18.0705 13.5479 18.1659 14.0213 18.166 14.4996C18.1661 14.9779 18.0708 15.4514 17.8859 15.8924C17.7009 16.3335 17.4299 16.7333 17.0887 17.0684C16.7475 17.4036 16.3429 17.6674 15.8986 17.8444C15.4543 18.0214 14.9792 18.1082 14.501 18.0995C13.5463 18.0995 12.6306 17.7202 11.9555 17.0451C11.2804 16.37 10.9011 15.4544 10.9011 14.4996C10.9011 13.5449 11.2804 12.6292 11.9555 11.9541C12.6306 11.279 13.5463 10.8997 14.501 10.8997L14.4998 10.9009ZM20.7996 6.70109C20.4125 6.71658 20.0464 6.88126 19.7779 7.16064C19.5095 7.44001 19.3596 7.81241 19.3596 8.19984C19.3596 8.58726 19.5095 8.95966 19.7779 9.23904C20.0464 9.51841 20.4125 9.68309 20.7996 9.69859C21.1974 9.69859 21.5789 9.54056 21.8602 9.25926C22.1415 8.97797 22.2995 8.59645 22.2995 8.19864C22.2995 7.80083 22.1415 7.41931 21.8602 7.13801C21.5789 6.85672 21.1974 6.69869 20.7996 6.69869V6.70109Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+          <address class="footer_contacts">
+            <p class="footer-number">+7 (495) 411-14-75</p>
+            <p class="footer-schedule">пн. - пт. с 9.00 до 18.00</p>
+          </address>
+        </div>
+      </footer>
+      <!-- /Футер -->
+    </div>
+  </body>
+</html>

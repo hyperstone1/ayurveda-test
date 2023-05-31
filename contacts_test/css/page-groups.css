@@ -1,0 +1,154 @@
+/* Вторичное меню */
+#smenu {
+	color: #282828;
+}
+.smenu-link {
+	color: #282828;
+}
+.smenu-link:hover {
+	color: #282828;
+}
+#smenu-heading {
+	color: #282828;
+}
+a#smenu-heading:hover,
+a#smenu-heading:focus {
+	color: #282828;
+}
+@media(min-width: 992px) {
+	#smenu-row {
+		border-bottom: 1px solid #8f8e8f;
+	}
+}
+@media(max-width: 991px) {
+	#smenu {
+		border-bottom: 1px solid #8f8e8f;
+	}
+}
+
+@media(max-width: 991px) {
+	#smenu-toggle {
+		background: url('../images/smenu-toggle.svg') no-repeat center;
+	}
+}
+
+
+#block-1 .content-block {
+	padding-bottom: 50px;
+}
+#block-1 .block-ttl {
+	margin-bottom: 20px;
+}
+#b1-p {
+	font-size: 28px;
+	line-height: 32px;
+}
+#block-1 .flex-cell-container {
+	max-width: 1420px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#block-1 .flex-cell-container .flex-row {
+	margin-bottom: 0;
+}
+ #block-1 .flex-cell {
+ 	margin: 0;
+ 	max-width: 712px;
+ }
+#block-1 .flex-cell .block-ttl {
+	font-size: 36px;
+	line-height: 40px;
+} 
+
+#b1-c2 {
+	background: #f1f8ff;
+}
+
+
+
+/* Блок-2 */
+#block-2 .content-block {
+	padding-top: 50px;
+	padding-bottom: 90px;
+}
+#b2-heading {
+	margin-bottom: 120px;
+}
+#b2-lineBottom {
+	width: 80px;
+	height: 1px;
+	background: #445763;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+.tab-products {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+}
+@media(max-width: 991px) {
+	.tab-products {
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: center;
+	}
+}
+.product-box {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+}
+.product-caption {
+	font-size: 14px;
+}
+.product-box img {
+	margin-bottom: 5px;
+}
+.product-plus {
+	width: 16px;
+	height: 17px;
+	background: url('../images/plus.png');
+	margin: 60px;
+}
+@media(min-width: 768px) {
+	.product-plus {
+		position: relative;
+		top: -10px;
+	}
+}
+@media(max-width: 767px) {
+	.product-plus {
+		margin: 30px;
+	}
+}
+
+
+/* Блок-3 */
+#block-3 {
+	font-size: 22px;
+	line-height: 24px;
+	height: 1140px;
+	background: url('../images/groups-b3.jpg') no-repeat center bottom;
+	/*background-color: #fafaf8;*/
+}
+#block-3 .block-ttl {
+	margin-bottom: 30px;
+}
+#block-3 .read-more {
+	color: #00a9ff;
+}
+#block-3 .read-more:hover {
+	color: #00a9ff;
+}
+
+
+/* Блок-4 */
+#block-4 .content-block {
+	padding-top: 90px;
+}

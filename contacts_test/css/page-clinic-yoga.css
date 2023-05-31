@@ -1,0 +1,135 @@
+#header-block {
+	width: 100%;
+	height: 1050px;
+	background: url('../images/header-clinic-yoga.jpg') no-repeat center;
+	justify-content: flex-start;
+}
+#header-block .page-header {
+	max-width: 730px;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	top: 146px;
+}
+@media(min-width: 1200px) {
+	#header-block .page-header  {
+		left: -60px;
+	}
+}
+#header-block .block-icon {
+	margin-bottom: 6px;
+}
+@media(min-width: 1200px) {
+	#header-block .page-ttl {
+		font-size: 68px;
+	}
+}
+#header-block .page-p {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+@media(min-width: 1200px) {
+	#block-1 .container {
+		max-width: 1060px;
+	}
+}
+#b1-bottomLine {
+	width: 100%;
+	max-width: 1344px;
+	height: 1px;
+	background: #cfcfcf;
+	margin-left: auto;
+	margin-right: auto;
+}
+#b1-coach {
+	width: 100%;
+	max-width: 334px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media(min-width: 1200px) {
+	#b1-coach {
+		float: left;
+	}
+}
+@media(max-width: 1199px) {
+	#b1-coach {
+		margin-bottom: 60px;
+	}
+}
+#b1-coach .block-prettl {
+	font-size: 14px;
+	line-height: 14px;
+	margin-bottom: 6px;
+}
+#b1-coach .block-ttl {
+	font-size: 24px;
+	line-height: 24px;
+	margin-bottom: 30px;
+}
+.coach-photo {
+	margin-bottom: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+.coach-photo img {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.coach-photo:before,
+.coach-photo:after {
+	content: '';
+	display: block;
+	width: 78px;
+	height: 1px;
+	background: #ccc;
+}
+#b1-gallery {
+	width: 100%;
+	max-width: 612px;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media(min-width: 1200px) {
+	#b1-gallery {
+		float: left;
+		margin-left: 110px;
+	}
+}
+
+#block-2 .container {
+	max-width: 980px;
+}
+
+#b2-text {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin-bottom: 60px;
+}
+@media(max-width: 991px) {
+	#b2-text {
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+@media(min-width: 992px) {
+	#b2-desc {
+		max-width: 420px;
+	}
+}
+
+#tab3-c2 {
+	background: #000;
+}
+#tab3-c2 .tab-cell-ttl {
+	color: #fff;
+}
+#tab3-c2 .tab-cell-p {
+	color: #b7b7b7;
+}

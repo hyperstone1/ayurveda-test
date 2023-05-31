@@ -1,0 +1,152 @@
+#header-block {
+	height: 1232px;
+	background: url('../images/header-procedures.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	padding-bottom: 60px;
+}
+
+@media(min-width: 1200px) {
+	#header-block .container {
+		width: 1080px;
+	}
+}
+#header-block .page-header {
+	padding-top: 160px;
+	text-align: left;
+}
+#header-block .page-prettl {
+	margin-bottom: 30px;
+}
+#header-block .page-ttl {
+	margin-bottom: 30px;
+}
+#header-block .page-p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+
+/* Блок-1 */
+@media(min-width: 1200px) {
+	#block-1 .container {
+		width: 1030px;
+	}
+}
+.b2-icon {
+	margin-bottom: 30px;
+}
+@media(min-width: 992px) {
+	.feat-box:first-of-type {
+		margin-bottom: 160px;
+	}
+}
+@media(max-width: 991px) {
+	.feat-box {
+		margin-bottom: 50px;
+	}
+}
+.b2-feat-ttl {
+	color: #78c479;
+	font-weight: 400;
+}
+
+/* Блок-2 */
+@media(min-width: 1200px) {
+	#block-2 .container {
+		width: 1030px;
+	}
+}
+#block-2 {
+	background: #ebebeb;
+}
+
+/* Блок-3 */
+#block-3 .content-block {
+	padding-bottom: 120px;
+}
+
+#b3-tabs {
+	margin-top: 60px;
+}
+#b3-tabs .block-prettl {
+	font-size: 15px;
+	margin-bottom: 25px;
+}
+#b3-tabs .ttl {
+	margin-bottom: 10px;
+}
+#b3-tabs .tab {
+	max-width: 780px;
+}
+#b3-tabs .tab-cell {
+	background: none;
+}
+#b3-tabs .tab-cell {
+	margin-top: 20px;
+}
+
+#block-3 .tab-switch {
+	text-align: center;
+	max-width: 780px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#block-3  .tab-switcher:after {
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+/* Блок-4 */
+#block-4 .content-block {
+	padding-top: 120px;
+}
+
+
+/* Блок-5 */
+#block-5 {
+	font-size: 22px;
+	background: #ececec;
+}
+#block-5 .content-block {
+	padding-bottom: 120px;
+}
+@media(min-width: 1200px) {
+	#block-5 .block-ttl {
+		font-size: 68px;
+	}
+}
+
+#contact-us {
+	color: #fff;
+	background: #ea3131;
+	display: block;
+	width: 178px;
+	height: 56px;
+	border-radius: 30px;
+	font-size: 24px;
+	line-height: 50px;
+	padding-top: 2px;
+	text-align: center;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 1;
+	transition: opacity .2s linear 0s;
+}
+#contact-us:hover,
+#contact-us:focus {
+	text-decoration: none;
+	opacity: .8;
+}
+
+
+/* Блок-6 */
+#block-6 {
+	width: 100%;
+	height: 849px;
+	background-image: url('../images/procedures-bottom.jpg');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
