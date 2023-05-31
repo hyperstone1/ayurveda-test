@@ -33,7 +33,7 @@ const data = [
   {
     username: 'Елена Федотова',
     location: 'Будапешт, Венгрия',
-    imgSrc: './images/reviews/user_3.png',
+    imgSrc: './images/reviews/unknown_user.png',
     videoSrc: './video/elena_fedotova.mp4',
     // comment: `
     // Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления.
@@ -48,7 +48,7 @@ const data = [
   {
     username: 'Татьяна',
     location: 'Москва, Россия',
-    imgSrc: './images/reviews/user_4.png',
+    imgSrc: './images/reviews/unknown_user.png',
     videoSrc: './video/tatyana.mp4',
     // comment: `
     // Здесь я был в третий раз. Всё супер! Хотя и появились отличия.
