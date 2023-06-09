@@ -16,123 +16,64 @@ const data = [
   },
   {
     username: 'Лилия',
-    // location: 'Будапешт, Венгрия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/liliya.mp4',
+    poster: './video/posters/liliya.jpg',
   },
   {
     username: 'Ксения Безуглова',
     location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/kseniya_bezyglova.mp4',
-    // comment: `
-    // Я приезжаю сюда каждые шесть-семь месяцев в течение уже трёх лет.
-    // Будучи совершенно уставшей от работы я здесь нахожу всё,
-    // что мне не хватает в Москве: это и лечебные процедуры и совершенно другую энергетику...`,
+    poster: './video/posters/kseniya_bezyglova.jpg',
   },
   {
     username: 'Елена Федотова',
-    location: 'Будапешт, Венгрия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/elena_fedotova.mp4',
-    // comment: `
-    // Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления.
-    // Мы провели 2 недели в аюрведическом центре Аюрведа Бхаван.
-    // За это время прошли очистительный курс (панчакарму): массажи, очистительные процедуры, вегетарианское питание.
-    // Надо сказать, что действительно наше самочувствие намного улучшилось, нервная система пришла в равновесие.
-    // Массажисты отличные, очень опытный аюрведический доктор, который назначал все процедуры.
-    // Номера чистые, персонал очень доброжелательный и ненавязчивый.
-    // Когда мы вернулись домой, то все заметили, что мы не только постройнели, но и помолодели.
-    // Нам все понравилось!`,
+    poster: './video/posters/elena_fedotova.jpg',
   },
   {
     username: 'Татьяна',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/tatyana.mp4',
-    // comment: `
-    // Здесь я был в третий раз. Всё супер! Хотя и появились отличия.
-    // Был другой доктор, персонал поменялся наполовину.
-    // Но все процедуры такие же качественные, персонал заботливый, уютно.
-    // Из нового понравился массаж мешочками с травами.
-    // Отдельное большое спасибо за организацию путешествия по гималайским храмам. Вот еще.
-    // Лекция про аюрведу была очень интересна, хоть и на английском с переводчиком ;((.
-    // Но это мелочи! Всем так держать!!! Уже начал ждать следующей поездки!`,
+    poster: './video/posters/tatyana.jpg',
   },
   {
     username: 'Екатерина',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/ekaterina.mp4',
-    // comment: `
-    // Мы с сестрой ездили в Аюрведу Бхаван осенью 2022 года по совету друзей.
-    // Это был великолепный, мягкий детокс всего организма!
-    // Вкусная диетическая, индийская еда, массажи и разнообразные процедуры каждый день, огромное внимание персонала и главного врача.
-    // Особенно понравился массаж с мёдом и молоком!
-    // Уже планируем вдвоем следующую поездку в Аюрведу Бхаван с мужьями !`,
+    poster: './video/posters/ekaterina.jpg',
   },
   {
     username: 'Елена',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/elena.mp4',
-    // comment: `
-    // Хочу поделиться отзывом о том, как я побывала в Ришекеше на панчакарме в замечательном аюрведическом центре "Аюрведа Пхагаван".
-    // Это был не обычный туристический отдых с тусовками дискотеками.
-    // Аюрведический отпуск точно нужен тем, кто устал (или ОЧЕНЬ УСТАЛ) физически и эмоционально, утомился от суеты и постоянной беготни, выдохся.
-    // Аюрведа – буквально спасение для тех, кто забыл, что такое перерыв в бесконечном стрессе.
-    // Кто постоянно напряжен. Кто плохо спит и неважно себя чувствует. Кто обесточен и обессилен.
-    // Кто потерял источники для восстановления и восполнения.
-    // Кто просто понял, что давно о себе не заботился.
-    // О здоровье, красоте и чистоте своего тела, головы и эмоций.
-    // Я чувствовала себя именно так! Процесс лечения для меня был знаком только по отзывам тех, кто мне рекомендовал туда приехать.
-    // Я знала чего ожидать, как с точки зрения проведения процедур, так и финального результата.
-    // Что касается последнего, он даже превзошёл мои ожидания.
-    // За столь короткий срок удалось привести в порядок не только ЖКТ, но и нервную систему — наладился сон, вернулась работоспособность и энергия.
-    // Решающую роль в успехе оздоровления сыграли ряд факторов, а точнее, грамотно выстроенная система.
-    // Врачи этого центра обладают не только опытом в ведении Панчакармы (быстро определили проблематику, назначили комплекс процедур), но и широкими аюрведическими знаниями, накопленными поколениями.
-    // Они все являются потомственными носителями этих знаний. Очень понравился массаж в 4ре руки.
-    // В номерах тепло и уютно, обстановка по-домашнему доброжелательная. Время, проведённое в аюрведическом центре, принесло мне массу пользы.
-    // Ну и плюсом идёт результат. Появилась легкость, минус 5 кг и привычка правильно питаться.
-    // Рекомендую всем посетить аюрведический центр "Аюрведа Пхагаван".`,
+    poster: './video/posters/elena.jpg',
   },
   {
     username: 'Ричард',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/richard.mp4',
-    // comment: `
-    // Мы с сестрой ездили в Аюрведу Бхаван осенью 2022 года по совету друзей.
-    // Это был великолепный, мягкий детокс всего организма!
-    // Вкусная диетическая, индийская еда, массажи и разнообразные процедуры каждый день, огромное внимание персонала и главного врача.
-    // Особенно понравился массаж с мёдом и молоком!
-    // Уже планируем вдвоем следующую поездку в Аюрведу Бхаван с мужьями !`,
+    poster: './video/posters/richard.jpg',
   },
   {
-    username: 'Дария и Ольга',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    username: 'Участница курса',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/unknown_1.mp4',
-
-    // comment: `
-    // Мы с сестрой ездили в Аюрведу Бхаван осенью 2022 года по совету друзей.
-    // Это был великолепный, мягкий детокс всего организма!
-    // Вкусная диетическая, индийская еда, массажи и разнообразные процедуры каждый день, огромное внимание персонала и главного врача.
-    // Особенно понравился массаж с мёдом и молоком!
-    // Уже планируем вдвоем следующую поездку в Аюрведу Бхаван с мужьями !`,
+    poster: './video/posters/unknown_1.jpg',
   },
   {
-    username: 'Дария и Ольга',
-    location: 'Москва, Россия',
-    imgSrc: './images/reviews/unknown_user.png',
+    username: 'Туристы из России',
+    imgSrc: './images/reviews/no_user.png',
     videoSrc: './video/unknown_2.mp4',
-
-    // comment: `
-    // Мы с сестрой ездили в Аюрведу Бхаван осенью 2022 года по совету друзей.
-    // Это был великолепный, мягкий детокс всего организма!
-    // Вкусная диетическая, индийская еда, массажи и разнообразные процедуры каждый день, огромное внимание персонала и главного врача.
-    // Особенно понравился массаж с мёдом и молоком!
-    // Уже планируем вдвоем следующую поездку в Аюрведу Бхаван с мужьями !`,
+    poster: './video/posters/unknown_2.jpg',
+  },
+  {
+    username: 'Наши друзья',
+    imgSrc: './images/reviews/no_user.png',
+    videoSrc: './video/friends.mp4',
+    poster: './video/posters/friends.jpg',
   },
   {
     username: 'Катя',
@@ -294,8 +235,7 @@ function displayItems(page) {
       video.appendChild(source);
 
       userTextBlock.appendChild(video);
-
-      // После добавления элемента видео в userTextBlock, инициализируем Video.js
+      item.poster ? (video.poster = item.poster) : null;
     } else {
       const userTextQuotes1 = document.createElement('div');
       const userTextQuotes2 = document.createElement('div');
@@ -327,13 +267,14 @@ function displayItems(page) {
     comment.appendChild(userTextBlock);
 
     list.appendChild(comment);
+    setTimeout(() => {
+      const videos = document.querySelectorAll('.video-js');
+
+      videos.forEach((video) => {
+        videojs(video);
+      });
+    }, 0);
   });
-  setTimeout(() => {
-    const videos = document.querySelectorAll('.video-js');
-    videos.forEach((video) => {
-      videojs(video);
-    });
-  }, 0);
 }
 
 function updatePaginationLinks(currentPage) {
@@ -375,29 +316,6 @@ function createPagesNumbers(page) {
     firstPage.textContent = first;
   }
 }
-
-// Функция для создания ссылок пагинации
-// function createPaginationLinks() {
-//   const pagination = document.getElementById('pagination');
-//   console.log(pagination);
-//   // Вычисляем общее количество страниц
-//   const totalPages = Math.ceil(data.length / itemsPerPage);
-
-//   for (let i = 1; i <= totalPages; i++) {
-//     const linkElement = document.createElement('a');
-//     linkElement.href = '#';
-//     linkElement.textContent = i;
-
-//     // Добавляем обработчик события click для каждой ссылки
-//     linkElement.addEventListener('click', () => {
-//       displayItems(i); // Отображаем элементы на выбранной странице
-//       updatePaginationLinks(i); // Обновляем ссылки пагинации после переключения страницы
-//       createPagesNumbers(i);
-//     });
-
-//     pagination.appendChild(linkElement);
-//   }
-// }
 
 function createArrows() {
   const paginationElement = document.getElementById('pagination');
@@ -455,8 +373,8 @@ function createArrows() {
         }
       }
       displayItems(currentPage); // Отображаем элементы на выбранной странице
-      updatePaginationLinks(currentPage); // Обновляем ссылки пагинации после переключения страницы
-      createPagesNumbers(currentPage);
+      updatePaginationLinks(currentPage); // Обновляем стрелки пагинации после переключения страницы
+      createPagesNumbers(currentPage); // Меняем цифру текущей страницы
       window.scroll({ top: 0 });
     });
   });
@@ -464,6 +382,5 @@ function createArrows() {
 // Показать первую страницу при загрузке страницы
 displayItems(currentPage);
 createPagesNumbers(currentPage);
-// Создать ссылки пагинации
+// Создаем ссылки пагинации
 createArrows();
-// createPaginationLinks();
