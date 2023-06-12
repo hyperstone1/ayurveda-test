@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
   addPaginationArrows();
 
   function handleResize() {
-    const width = screen.width;
+    const width = window.screen.width;
     console.log(width);
     if (width <= 768) {
       //section.class = "home_info"
