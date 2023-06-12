@@ -170,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
   addPaginationArrows();
 
   function handleResize() {
-    const width = window.screen.width;
-
+    const width = screen.width;
+    console.log(width);
     if (width <= 375) {
       addBookingSlider();
     }
@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
     showAll.className = 'home_info__card_text-show_all';
     showAll.textContent = 'Читать все';
     if (textContent.length > maxLength) {
-
       let shortenedText = textContent.substring(0, maxLength) + '...';
       textContainer.innerHTML = `${shortenedText} `;
       textContainer.style.height = '81.3333vw';
