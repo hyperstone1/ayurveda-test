@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const showAll = document.createElement('button');
     showAll.className = 'home_info__card_text-show_all';
     showAll.textContent = 'Читать все';
-
     if (textContent.length > maxLength) {
+
       let shortenedText = textContent.substring(0, maxLength) + '...';
       textContainer.innerHTML = `${shortenedText} `;
       textContainer.style.height = '81.3333vw';
