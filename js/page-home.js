@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const scrollLink = document.querySelector('.about__right_description-link');
   scrollLink.addEventListener('click', (e) => smoothScroll(e, 'route'));
 
-
   function addPaginationArrows() {
     let windowWidth = window.innerWidth;
     let navigationContainer = document.querySelector('.home__slider-navigation');
@@ -139,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleResize() {
     const width = screen.width;
     console.log(width);
-    if (width <= 375) {
+    if (width <= 768) {
       //section.class = "home_info"
       let textContainer = document.querySelector('.home_info__card_text-description');
       let textContent = textContainer.innerHTML;
