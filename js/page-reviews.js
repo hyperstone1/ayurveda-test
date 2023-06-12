@@ -368,7 +368,6 @@ function createArrows() {
           paginationElements[0].classList.remove('inactive');
         }
         if (currentPage === totalPages) {
-          console.log('ravno');
           link.classList.add('inactive');
         }
       }

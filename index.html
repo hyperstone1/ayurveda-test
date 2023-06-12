@@ -6,14 +6,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="css/page-home.css" />
     <link rel="stylesheet" href="css/set.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <script src="js/script.js"></script>
-    <script src="js/page-home.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/page-home.css" />
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <title>Главная</title>
   </head>
@@ -170,65 +171,78 @@
       </div>
     </header>
     <section class="home">
-      <div class="home_wrapper container">
-        <div class="wrapper__title">
-          <div class="wrapper__title-title">
+      <div class="home__wrapper container">
+        <div class="home__wrapper_info">
+          <div class="home__wrapper_info-title">
             <p class="ayurveda">AYURVEDA</p>
             <p class="bhavan">BHAVAN</p>
           </div>
-          <div class="wrapper__title-subtitle">Аюрведическая клиника в Гималаях</div>
-          <div class="wrapper__title-img">
+          <div class="home__wrapper_info-subtitle">Аюрведическая клиника в Гималаях</div>
+          <div class="home__wrapper_info-img">
             <img src="./images/home/home_clinic.png" alt="clinic" />
           </div>
-          <div class="wrapper__slider">
-            <div class="swiper-container">
-              <div class="swiper-pagination"></div>
-
+          <div class="home__wrapper_slider">
+            <div class="home__slider swiper-container">
               <div class="services__list_wrapper">
                 <div class="services__item">
                   <div class="services__item-category">
                     Панчакарма в Ришикеше для оздоровления и омоложения
                   </div>
-                  <div class="services__item-booking">Перейти к бронированию</div>
                 </div>
                 <div class="services__item">
                   <div class="services__item-category">
                     Панчакарма в Ришикеше для оздоровления и омоложения
                   </div>
-                  <div class="services__item-booking">Перейти к бронированию</div>
                 </div>
                 <div class="services__item">
                   <div class="services__item-category">
                     Панчакарма в Ришикеше для оздоровления и омоложения
                   </div>
-                  <div class="services__item-booking">Перейти к бронированию</div>
                 </div>
                 <div class="services__item">
                   <div class="services__item-category">
                     Панчакарма в Ришикеше для оздоровления и омоложения
                   </div>
-                  <div class="services__item-booking">Перейти к бронированию</div>
                 </div>
               </div>
-              <div class="swiper-navigation"></div>
+              <div class="home__slider-pagination"></div>
+              <a href="./booking.html" class="services__item-booking">Перейти к бронированию</a>
             </div>
           </div>
         </div>
         <div class="wrapper__img">
-          <img src="./images/home/home_back.png" alt="home_back" />
+          <div class="home__slider-navigation"></div>
+          <div class="wrapper__img-slider">
+            <div class="wrapper__slider swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./images/home/home_back.png" alt="home_back" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/home/home_back.png" alt="home_back" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/home/home_back.png" alt="home_back" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/home/home_back.png" alt="home_back" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section id="home_info">
-      <div class="container">
-        <div class="home_info">
+    <section class="home_info">
+      <div class="home_info_container container">
+        <div class="home_info__info">
           <div class="home_info__card">
-            <div class="card__img">
+            <div class="home_info__card-img">
               <img src="./images/home/info_card_1.png" alt="Аюрведа" />
             </div>
-            <div class="card__text">
-              <div class="card__text-title">Аюрведа</div>
-              <div class="card__text-description">
+            <div class="home_info__card_text">
+              <div class="home_info__card_text-title">Аюрведа</div>
+              <div class="home_info__card_text-description">
                 <p>
                   Аюрведа — древнеиндийское медицинское учение о жизни и здоровье, зародившееся
                   более 5000 лет назад. В переводе с санскрита аюрведа означает «наука о жизни».
@@ -246,10 +260,962 @@
                 </p>
               </div>
             </div>
-            <div class="card__img img_woman">
+            <div class="home_info__card-img_woman">
               <img src="./images/home/info_card_1_woman.png" alt="Аюрведа" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="panchakarma">
+      <div class="panchakarma_container container">
+        <div class="panchakarma__text">
+          <div class="panchakarma__text_title">
+            <div class="panchakarma__text_title-title">Панчакарма - как основа очищения</div>
+          </div>
+          <div class="panchakarma__text_description">
+            <div class="panchakarma__text_description-title">
+              12 дней - минимальный курс, оптимально - 21 день
+            </div>
+            <div class="panchakarma__text_description-text">
+              Одна из базовых процедур в аюрведической медицине – панчакарма, комплексная очистка
+              организма. Центр «Аюрведа Бхаван» уделяет особое внимание этому лечебному курсу. После
+              курса панчакармы из организма выводятся шлаки, происходит детоксикация органов и
+              тканей, нормализуется их работа.
+            </div>
+          </div>
+        </div>
+        <div class="panchakarma__slider">
+          <div class="swiper-thumbs swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/home/pancha_slide.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/home/pancha_slide.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/home/pancha_slide.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-container slider-panchakarma">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="panchakarma__slider-chapter">ПИТАНИЕ</div>
+                <div class="panchakarma__slider-title">
+                  Аюрведическое питание – важная часть процедур
+                </div>
+                <div class="panchakarma__slider-text">
+                  Питание — основной фактор, влияющий на человеческое тело. Аюрведа настойчиво
+                  говорит о том, что неправильное питание является причиной многих заболеваний
+                  человека. По концепции Аюрведы, у еды есть позитивные и негативные качества.
+                  Аюрведа отличается целостным подходом к проблеме здоровья, она, прежде всего,
+                  уделяет внимание вопросам питания, так как никакое лекарство не сработает без
+                  соответствующего режима питания.
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="panchakarma__slider-chapter">ПИТАНИЕ</div>
+                <div class="panchakarma__slider-title">
+                  Аюрведическое питание – важная часть процедур
+                </div>
+                <div class="panchakarma__slider-text">
+                  Питание — основной фактор, влияющий на человеческое тело. Аюрведа настойчиво
+                  говорит о том, что неправильное питание является причиной многих заболеваний
+                  человека. По концепции Аюрведы, у еды есть позитивные и негативные качества.
+                  Аюрведа отличается целостным подходом к проблеме здоровья, она, прежде всего,
+                  уделяет внимание вопросам питания, так как никакое лекарство не сработает без
+                  соответствующего режима питания.
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="panchakarma__slider-chapter">ПИТАНИЕ</div>
+                <div class="panchakarma__slider-title">
+                  Аюрведическое питание – важная часть процедур
+                </div>
+                <div class="panchakarma__slider-text">
+                  Питание — основной фактор, влияющий на человеческое тело. Аюрведа настойчиво
+                  говорит о том, что неправильное питание является причиной многих заболеваний
+                  человека. По концепции Аюрведы, у еды есть позитивные и негативные качества.
+                  Аюрведа отличается целостным подходом к проблеме здоровья, она, прежде всего,
+                  уделяет внимание вопросам питания, так как никакое лекарство не сработает без
+                  соответствующего режима питания.
+                </div>
+              </div>
+            </div>
+            <div class="panchakarma__control">
+              <div class="panchakarma__control-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="about_container container">
+        <div class="about__left">
+          <div class="about__left-title">О нас</div>
+          <div class="discont">
+            <div class="discont__img">
+              <img src="./images/contacts/discont.png" alt="discont" />
+            </div>
+            <div class="discont__info">
+              <div class="info__title">Скидка -12%</div>
+              <div class="info__text">Акция на лето при покупке базового пакета</div>
+              <div class="info__book">
+                <a href="./booking.html" class="book-btn">Забронировать</a>
+              </div>
+            </div>
+            <div class="discont__close">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.7147 12.7145L1.28613 1.28595M12.7147 1.28595L1.28613 12.7145"
+                  stroke="#22262A"
+                  stroke-opacity="0.6"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__right">
+          <div class="about__right-title">
+            Почти два десятилетия назад мы открыли клинику в предгорье Гималаев и в верховьях реки
+            Ганга . Именно здесь, в городе Ришикеш, где Йога и Аюрведа берут своё начало. А теперь
+            мы расскажем Вам о всех наших плюсах.
+          </div>
+
+          <ul class="about__right_description">
+            <li class="about__right_description-text">
+              Клиника имеет полную аккредитацию и сертификацию от Министерства Здравохранения Индии
+            </li>
+            <li class="about__right_description-text">
+              В нашей клинике доктор с тридцатилетним стажем <u>Винод Шривастрав</u>
+            </li>
+            <li class="about__right_description-text">
+              Дипломированные терапевты по Аюрведическому массажу, синхронный в четыре руки
+            </li>
+            <li class="about__right_description-text">
+              Масла, травы и аюрведические препараты от лучших производителей Индии
+            </li>
+            <li class="about__right_description-text">
+              <u>Панчакарма</u> совмещаются со специальными процедурами по омоложению организма,
+              лечению суставов, программой снижения веса
+            </li>
+            <li class="about__right_description-text">
+              Мы практикуем интенсивную аюрведическую терапию до 8 процедур в день, по
+              индивидуальному назначению Доктора
+            </li>
+            <li class="about__right_description-text">
+              Различные <u>спа-программы</u> на натуральных ингридиентах
+            </li>
+            <li class="about__right_description-text">
+              Клиника находится на охраняемой закрытой, чистой территории, недалеко от
+              туристического центра города, в 5 минутах ходьбы от реки Ганга
+            </li>
+          </ul>
+          <ul class="about__right_description">
+            <li class="about__right_description-text">
+              Номера для проживания сделаны по индивидуальному дизайну и соответствуют европейским
+              стандартам
+            </li>
+            <li class="about__right_description-text">
+              У нас свой повар, мастер аюрведической кухни. Доктор контролирует питание каждого
+              пациента
+            </li>
+            <li class="about__right_description-text">
+              Свой Йога зал. Ежедневные занятия с мастером йоги является частью лечебных процедур
+              (занятия йогой входит в базовый пакет )
+            </li>
+            <li class="about__right_description-text">
+              Индия - Дружеская страна, легко получить электронную визу, ежедневные
+              <a href="#route" class="about__right_description-link"
+                ><u>прямые рейсы, трансфер до клиники</u></a
+              >
+            </li>
+            <li class="about__right_description-text">
+              Аюрведа Бхаван находится недалеко от реки Ганга. Река Ганга в этих местах очень чистая
+              и красивая
+            </li>
+            <li class="about__right_description-text">
+              Святой город Ришикеш – мировой центр йоги , в городе более тридцати старейших Ашрамов.
+              В этом городе группа Битлс провела несколько недель обучаясь медитации и игре на
+              национальных индийских инструментах.
+            </li>
+            <li class="about__right_description-text">
+              При желании организовываем экскурсии по городу и окресностям
+            </li>
+          </ul>
+        </div>
+        <div class="about__advantage">
+          <div class="about__advantage-number">4000</div>
+          <div class="about__advantage-text">Человек ежегодно посещают наш центр</div>
+        </div>
+      </div>
+    </section>
+    <section class="license">
+      <div class="license_container container">
+        <div class="license__text">
+          <div class="license__text-title">Лицензия</div>
+          <div class="license__text-description">
+            Клиника имеет полную аккредитацию и сертификацию от Министерства Здравохранения Индии.
+            (Таких только две в Ришикеше)
+          </div>
+        </div>
+        <div class="license-img">
+          <img src="./images/home/license.png" alt="" />
+        </div>
+        <div class="license__advantages">
+          <div class="license__advantages-item">
+            <div class="license__advantages-title">Лечебная деятельность</div>
+            <div class="license__advantages-plus">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="25" cy="25" r="25" fill="#C344AB" />
+                <path
+                  d="M22.1426 31.5043C21.987 31.5043 21.8412 31.4798 21.7051 31.4308C21.569 31.3818 21.4426 31.2994 21.3259 31.1835L16.3092 26.1668C16.0954 25.9529 15.9931 25.6756 16.0024 25.335C16.0117 24.9943 16.1237 24.7174 16.3384 24.5043C16.5523 24.2904 16.8245 24.1835 17.1551 24.1835C17.4856 24.1835 17.7579 24.2904 17.9717 24.5043L22.1426 28.6751L32.0301 18.7876C32.244 18.5737 32.5212 18.4668 32.8619 18.4668C33.2026 18.4668 33.4795 18.5737 33.6926 18.7876C33.9065 19.0015 34.0134 19.2788 34.0134 19.6195C34.0134 19.9601 33.9065 20.237 33.6926 20.4501L22.9592 31.1835C22.8426 31.3001 22.7162 31.383 22.5801 31.432C22.444 31.481 22.2981 31.5051 22.1426 31.5043Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="license__advantages-item">
+            <div class="license__advantages-title">Аюрведические процедуры</div>
+            <div class="license__advantages-plus">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="25" cy="25" r="25" fill="#C344AB" />
+                <path
+                  d="M22.1426 31.5043C21.987 31.5043 21.8412 31.4798 21.7051 31.4308C21.569 31.3818 21.4426 31.2994 21.3259 31.1835L16.3092 26.1668C16.0954 25.9529 15.9931 25.6756 16.0024 25.335C16.0117 24.9943 16.1237 24.7174 16.3384 24.5043C16.5523 24.2904 16.8245 24.1835 17.1551 24.1835C17.4856 24.1835 17.7579 24.2904 17.9717 24.5043L22.1426 28.6751L32.0301 18.7876C32.244 18.5737 32.5212 18.4668 32.8619 18.4668C33.2026 18.4668 33.4795 18.5737 33.6926 18.7876C33.9065 19.0015 34.0134 19.2788 34.0134 19.6195C34.0134 19.9601 33.9065 20.237 33.6926 20.4501L22.9592 31.1835C22.8426 31.3001 22.7162 31.383 22.5801 31.432C22.444 31.481 22.2981 31.5051 22.1426 31.5043Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="license__advantages-item">
+            <div class="license__advantages-title">Изготовление аюрведических лекарств</div>
+            <div class="license__advantages-plus">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="25" cy="25" r="25" fill="#C344AB" />
+                <path
+                  d="M22.1426 31.5043C21.987 31.5043 21.8412 31.4798 21.7051 31.4308C21.569 31.3818 21.4426 31.2994 21.3259 31.1835L16.3092 26.1668C16.0954 25.9529 15.9931 25.6756 16.0024 25.335C16.0117 24.9943 16.1237 24.7174 16.3384 24.5043C16.5523 24.2904 16.8245 24.1835 17.1551 24.1835C17.4856 24.1835 17.7579 24.2904 17.9717 24.5043L22.1426 28.6751L32.0301 18.7876C32.244 18.5737 32.5212 18.4668 32.8619 18.4668C33.2026 18.4668 33.4795 18.5737 33.6926 18.7876C33.9065 19.0015 34.0134 19.2788 34.0134 19.6195C34.0134 19.9601 33.9065 20.237 33.6926 20.4501L22.9592 31.1835C22.8426 31.3001 22.7162 31.383 22.5801 31.432C22.444 31.481 22.2981 31.5051 22.1426 31.5043Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="route" class="route">
+      <div class="route_container container">
+        <div class="route__list-item_info">
+          <div class="route__list_info">
+            <div class="route__list_info-title">Как добраться до нас</div>
+            <div class="route__list_info-subtitle">И не потратить уйму времени и денег</div>
+            <a class="route__list_info-link" href="./contacts.html">Подробнее</a>
+          </div>
+          <div class="route__list_info-description">
+            После прибытия в Дели или другой город Индии, вы можете быстро долететь до Дехрадуна, а
+            затем воспользоваться нашим трансфером до клиники. Из аэропорта Дехрадун ехать 20 минут
+            на машине, а из Дели - 4,5 часа, также мы можем отправить машину в любую точку Дели.
+          </div>
+        </div>
+        <div class="route__list">
+          <div class="route__list-item">
+            <div class="route__list_title">
+              <div class="route__list_title-number">01</div>
+              <h3 class="route__list_title-title">Виза</h3>
+            </div>
+            <div class="route__list-description">
+              <div class="route__list-icon">
+                <svg
+                  width="71"
+                  height="70"
+                  viewBox="0 0 71 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M18.8252 11.1998H50.8409C53.7907 11.1998 56.2045 13.6121 56.2045 16.5618V53.4379C56.2045 56.386 53.7907 58.7998 50.8409 58.7998H18.8252V11.1998Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M18.8252 11.1998H50.8409C53.7907 11.1998 56.2045 13.6121 56.2045 16.5618V53.4379C56.2045 56.386 53.7907 58.7998 50.8409 58.7998H18.8252V11.1998Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.8999 11.1998H47.9156C50.8647 11.1998 53.2785 13.6121 53.2785 16.5618V53.4379C53.2785 56.386 50.8647 58.7998 47.9156 58.7998H15.8999V11.1998Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M15.8999 11.1998H47.9156C50.8647 11.1998 53.2785 13.6121 53.2785 16.5618V53.4379C53.2785 56.386 50.8647 58.7998 47.9156 58.7998H15.8999V11.1998Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.8999 11.1998H18.9064V58.7998H15.8999V11.1998Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M15.8999 11.1998H18.9064V58.7998H15.8999V11.1998Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35.4989 17.9467C40.3908 17.9467 44.3567 21.9207 44.3567 26.824C44.3567 31.7272 40.3908 35.7012 35.4989 35.7012C30.6068 35.7012 26.6411 31.7272 26.6411 26.824C26.6411 21.9207 30.6068 17.9467 35.4989 17.9467Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35.4987 17.9466C38.5542 17.9466 41.2484 19.4964 42.8407 21.8552C41.2716 22.9344 38.5695 23.6455 35.4987 23.6455C32.4277 23.6455 29.7257 22.9344 28.1567 21.8552C29.7488 19.4964 32.4432 17.9466 35.4987 17.9466Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35.4987 35.7012C38.5542 35.7012 41.2484 34.1499 42.8407 31.791C41.2716 30.7133 38.5695 30.0008 35.4987 30.0008C32.4277 30.0008 29.7257 30.7133 28.1567 31.791C29.7488 34.1499 32.4432 35.7012 35.4987 35.7012Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M26.6411 26.8247H44.3567"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35.499 17.9467V35.7012"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35.4989 17.9467C37.8688 17.9467 39.7902 21.9207 39.7902 26.824C39.7902 31.7272 37.8688 35.7012 35.4989 35.7012C33.1289 35.7012 31.2075 31.7272 31.2075 26.824C31.2075 21.9207 33.1289 17.9467 35.4989 17.9467Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M22.9907 45.0996H48.007"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M24.5789 48.6748H46.4183"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M26.1672 52.2476H44.8299"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <span>
+                Для начала надо собрать все документы и подать заявку на визу. Оформить индийскую
+                мульти-визу можно онлайн
+                <a target="_blank" href="https://indianvisaonline.gov.in/evisa/tvoa.html"
+                  ><u>на сайте E-visa</u></a
+                >
+                по разумной цене. Делается она около трех дней, а пользоваться ей можно целый год
+                или больше.
+              </span>
+            </div>
+          </div>
+          <div class="route__list-item">
+            <div class="route__list_title">
+              <div class="route__list_title-number">02</div>
+              <h3 class="route__list_title-title">Покупка билетов</h3>
+            </div>
+            <div class="route__list-description">
+              <div class="route__list-icon">
+                <svg
+                  width="71"
+                  height="70"
+                  viewBox="0 0 71 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.1478 24.9431C22.949 25.3463 23.2747 26.3315 22.8719 27.1324L20.7448 31.3576C20.342 32.1585 19.3562 32.484 18.5551 32.0808C17.7554 31.6776 17.4297 30.6924 17.8325 29.8916L19.9596 25.6665C20.3624 24.8655 21.3482 24.5401 22.1478 24.9431Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    d="M56.4777 42.223C55.6766 41.82 54.6922 42.1454 54.2895 42.9462L52.1623 47.1714C51.7596 47.9723 52.0838 48.9575 52.8849 49.3607C53.6861 49.7637 54.6719 49.4383 55.0746 48.6375L57.2018 44.4122C57.6045 43.6114 57.2788 42.6262 56.4777 42.223Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    d="M52.5972 34.2179C51.7961 33.8147 50.8103 34.1401 50.4075 34.9411L46.8991 41.9116C46.4964 42.7126 46.8221 43.6976 47.6217 44.1008C48.4229 44.504 49.4087 44.1786 49.8114 43.3776L53.3199 36.4071C53.7241 35.6062 53.3984 34.6209 52.5972 34.2179Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M40.9756 16.6602C46.7406 6.4824 55.8235 9.74656 50.9673 21.8095L38.549 46.4808C38.549 46.4808 38.2902 47.0344 37.9034 47.8527C38.1608 48.2085 38.3236 48.6383 38.3498 49.1068L38.7729 56.4817C38.847 57.7897 37.8395 58.921 36.5309 58.9961C35.2223 59.0711 34.0911 58.0625 34.017 56.7543L33.8788 54.3544L33.7393 54.2777L32.7011 56.3391C32.2257 57.2826 31.0669 57.6657 30.1232 57.1908L25.2336 54.7295C24.2899 54.2548 23.9075 53.0949 24.3815 52.1515L25.2641 50.3983L23.5818 51.5023C22.487 52.2213 21.0025 51.9135 20.2842 50.8181V50.8178C19.5645 49.7227 19.8728 48.2386 20.9676 47.5195C22.2006 46.7103 26.8271 43.4039 27.8768 43.1459C31.6034 35.5353 37.6882 23.1891 40.9756 16.6602Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M40.9756 16.6602C46.7406 6.4824 55.8235 9.74656 50.9673 21.8095L38.549 46.4808C38.549 46.4808 38.2902 47.0344 37.9034 47.8527C38.1608 48.2085 38.3236 48.6383 38.3498 49.1068L38.7729 56.4817C38.847 57.7897 37.8394 58.921 36.5309 58.9961C35.2223 59.0711 34.0911 58.0625 34.017 56.7543L33.8788 54.3544L33.7393 54.2777L32.7011 56.3391C32.2257 57.2826 31.0669 57.6657 30.1232 57.1908L25.2336 54.7295C24.2899 54.2548 23.9075 53.0949 24.3815 52.1515L25.2641 50.3983L23.5818 51.5023C22.487 52.2213 21.0025 51.9135 20.2842 50.8181V50.8178C19.5645 49.7227 19.8728 48.2386 20.9676 47.5195C22.2006 46.7103 26.8271 43.4039 27.8768 43.1459C31.6034 35.5353 37.6882 23.1891 40.9756 16.6602Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M46.8713 30.3195C46.8713 30.3195 55.3508 50.2874 55.1095 51.2443C54.8667 52.2011 54.8405 53.2064 51.6519 50.3133C48.4649 47.4203 48.4765 47.3964 48.4765 47.3964L41.2517 41.272L46.8713 30.3195Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M46.8713 30.3195C46.8713 30.3195 55.3508 50.2874 55.1095 51.2443C54.8667 52.2011 54.8405 53.2064 51.6519 50.3133C48.4649 47.4203 48.4765 47.3964 48.4765 47.3964L41.2517 41.272L46.8713 30.3195Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    d="M30.8907 23.2916C31.6904 23.6948 32.0161 24.6799 31.6134 25.4809L28.1049 32.4513C27.7022 33.2523 26.7164 33.5777 25.9152 33.1745C25.1141 32.7715 24.7884 31.7863 25.1926 30.9854L28.7011 24.0148C29.1038 23.2138 30.0896 22.8884 30.8907 23.2916Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M43.4646 20.7682L46.8581 22.4769L45.1265 25.9194L41.7314 24.2106L43.4646 20.7682Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M43.4646 20.7682L46.8581 22.4769L45.1265 25.9194L41.7314 24.2106L43.4646 20.7682Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M36.7139 25.2064C36.7139 25.2064 15.6241 30.2906 15.0004 31.055C14.3752 31.8193 13.5842 32.4396 17.8065 33.2768C22.0303 34.1141 22.0419 34.0901 22.0419 34.0901L31.2644 36.2446L36.7139 25.2064Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M36.7139 25.2064C36.7139 25.2064 15.6241 30.2906 15.0004 31.055C14.3752 31.8193 13.5842 32.4396 17.8065 33.2768C22.0303 34.1141 22.0419 34.0901 22.0419 34.0901L31.2644 36.2446L36.7139 25.2064Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                </svg>
+              </div>
+              <span>
+                Сейчас есть огромный выбор рейсов из любой точки мира в Дели, где вы сами можете
+                выбрать подходящие для вас удобства, время и стоимость. После прибытия в Дели, вы
+                можете долететь до Дехрадуна. Перелет займет час.
+              </span>
+            </div>
+          </div>
+          <div class="route__list-item">
+            <div class="route__list_title">
+              <div class="route__list_title-number">03</div>
+              <h3 class="route__list_title-title">Трансфер</h3>
+            </div>
+            <div class="route__list-description">
+              <div class="route__list-icon">
+                <svg
+                  width="71"
+                  height="70"
+                  viewBox="0 0 71 70"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_1054_1273"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="1"
+                    y="15"
+                    width="69"
+                    height="34"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12.4041 15.8039H64.0311C66.8192 15.8039 69.1 17.5944 69.1 19.7824V45.0078C69.1 47.1958 66.8192 48.9858 64.0311 48.9858H6.95981C4.17173 48.9858 1.90002 47.2315 1.90002 45.0437V28.5421L7.33532 19.7824C8.5564 17.8142 9.616 15.8039 12.4041 15.8039Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask0_1054_1273)">
+                    <path
+                      d="M1.89205 45.0806C1.89154 45.0562 1.89087 45.032 1.89087 45.0077V32.8607H4.36733V45.0806H1.89205Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                  </g>
+                  <path
+                    d="M12.4041 15.8039H64.0311C66.8192 15.8039 69.1 17.5944 69.1 19.7824V45.0078C69.1 47.1958 66.8192 48.9858 64.0311 48.9858H6.95981C4.17173 48.9858 1.90002 47.2315 1.90002 45.0437V28.5421L7.33532 19.7824C8.5564 17.8142 9.616 15.8039 12.4041 15.8039Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <mask
+                    id="mask1_1054_1273"
+                    style="mask-type: luminance"
+                    maskUnits="userSpaceOnUse"
+                    x="8"
+                    y="18"
+                    width="57"
+                    height="14"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.9104 18.9967H62.4011C63.4325 18.9967 64.2745 19.7714 64.2745 20.7179V29.625C64.2745 30.5716 63.4325 31.3462 62.4011 31.3462H10.3838C9.35331 31.3462 8.15761 30.5147 8.50979 29.625L12.0364 20.7179C12.3886 19.8282 12.8797 18.9967 13.9104 18.9967Z"
+                      fill="white"
+                    />
+                  </mask>
+                  <g mask="url(#mask1_1054_1273)">
+                    <path
+                      d="M50.536 18.3122H64.697V33.2256H50.536V18.3122Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                    <path
+                      d="M36.3744 18.3122H50.5361V33.2256H36.3744V18.3122Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                    <path
+                      d="M22.2128 18.3122H36.3745V33.2256H22.2128V18.3122Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                    <path
+                      d="M8.05103 18.3122H22.2127V33.2256H8.05103V18.3122Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                    <path
+                      d="M7.85792 28.7622C8.16766 28.6173 8.53929 28.7522 8.68402 29.062L9.57861 30.9761C9.72334 31.2857 9.58841 31.6573 9.27866 31.8022C8.96908 31.9469 8.59728 31.812 8.45272 31.5023L7.55814 29.5882C7.41341 29.2784 7.54834 28.9068 7.85792 28.7622Z"
+                      stroke="#AAAAAA"
+                      stroke-miterlimit="22.9256"
+                    />
+                  </g>
+                  <path
+                    d="M13.9104 18.9967H62.4011C63.4325 18.9967 64.2745 19.7714 64.2745 20.7179V29.625C64.2745 30.5716 63.4325 31.3462 62.4011 31.3462H10.3838C9.35331 31.3462 8.15761 30.5147 8.50979 29.625L12.0364 20.7179C12.3886 19.8282 12.8797 18.9967 13.9104 18.9967Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.1336 33.4248H21.6356C21.7783 33.4248 21.895 33.5416 21.895 33.6843V34.5824C21.895 34.7251 21.7783 34.8418 21.6356 34.8418H17.1336C16.9911 34.8418 16.8743 34.7251 16.8743 34.5824V33.6843C16.8743 33.5416 16.9911 33.4248 17.1336 33.4248Z"
+                    fill="#AAAAAA"
+                  />
+                  <path
+                    d="M17.1336 33.4248H21.6356C21.7783 33.4248 21.895 33.5416 21.895 33.6843V34.5824C21.895 34.7251 21.7783 34.8418 21.6356 34.8418H17.1336C16.9911 34.8418 16.8743 34.7251 16.8743 34.5824V33.6843C16.8743 33.5416 16.9911 33.4248 17.1336 33.4248Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.1747 43.3711C19.2775 43.3711 21.7926 45.8849 21.7926 48.9856C21.7926 52.0864 19.2775 54.6001 16.1747 54.6001C13.0722 54.6001 10.557 52.0864 10.557 48.9856C10.557 45.8849 13.0722 43.3711 16.1747 43.3711Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M16.1747 43.3711C19.2775 43.3711 21.7926 45.8849 21.7926 48.9856C21.7926 52.0864 19.2775 54.6001 16.1747 54.6001C13.0722 54.6001 10.557 52.0864 10.557 48.9856C10.557 45.8849 13.0722 43.3711 16.1747 43.3711Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.1749 47.1153C17.2084 47.1153 18.0462 47.9524 18.0462 48.9853C18.0462 50.0182 17.2084 50.8555 16.1749 50.8555C15.1415 50.8555 14.3037 50.0182 14.3037 48.9853C14.3037 47.9524 15.1415 47.1153 16.1749 47.1153Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M16.1749 47.1153C17.2084 47.1153 18.0462 47.9524 18.0462 48.9853C18.0462 50.0182 17.2084 50.8555 16.1749 50.8555C15.1415 50.8555 14.3037 50.0182 14.3037 48.9853C14.3037 47.9524 15.1415 47.1153 16.1749 47.1153Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M54.8165 43.3711C57.919 43.3711 60.4332 45.8849 60.4332 48.9856C60.4332 52.0864 57.919 54.6001 54.8165 54.6001C51.7131 54.6001 49.1979 52.0864 49.1979 48.9856C49.1979 45.8849 51.7131 43.3711 54.8165 43.3711Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M54.8165 43.3711C57.919 43.3711 60.4332 45.8849 60.4332 48.9856C60.4332 52.0864 57.919 54.6001 54.8165 54.6001C51.7131 54.6001 49.1979 52.0864 49.1979 48.9856C49.1979 45.8849 51.7131 43.3711 54.8165 43.3711Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M54.8164 47.1153C55.8494 47.1153 56.6864 47.9524 56.6864 48.9853C56.6864 50.0182 55.8494 50.8555 54.8164 50.8555C53.7816 50.8555 52.9447 50.0182 52.9447 48.9853C52.9447 47.9524 53.7816 47.1153 54.8164 47.1153Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M54.8164 47.1153C55.8494 47.1153 56.6864 47.9524 56.6864 48.9853C56.6864 50.0182 55.8494 50.8555 54.8164 50.8555C53.7816 50.8555 52.9447 50.0182 52.9447 48.9853C52.9447 47.9524 53.7816 47.1153 54.8164 47.1153Z"
+                    stroke="#AAAAAA"
+                    stroke-miterlimit="22.9256"
+                  />
+                </svg>
+              </div>
+              <span>
+                Мы готовы организовать для вас комфортабельный трансфер с проверенным водителем из
+                аэропорта или любого отеля Дели или из аэропорта Дехрадун прямо до клиники.
+                Стоимость можно узнать на нашем сайте.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="booking">
+      <div class="booking_container container">
+        <div class="booking__info">
+          <div class="booking__info_title">
+            <h3 class="booking__info_title-title">Бронирование</h3>
+            <a href="./prices.html" class="booking__info_title-subtitle">Посмотреть цены</a>
+          </div>
+          <div class="booking__info_description">
+            <span>
+              В нашем центре вы можете пройти курс панчакармы с проживанием и питанием. Он включает
+              в себя йогу, курс омоложения и очищения, консультации доктора, а также доступны
+              дополнительные процедуры.
+            </span>
+          </div>
+        </div>
+        <div class="booking__list">
+          <div class="booking__list_card">
+            <div class="booking__list_card-img">
+              <img src="./images/home/booking_1.png" alt="" />
+            </div>
+            <div class="booking__list_card-text">
+              <div class="booking__list_card-info">
+                <div class="booking__list_card-title">Standart</div>
+                <div class="booking__list_card-description">
+                  <div class="booking__list_card-beds_count">2 односпальных кровати</div>
+                  <div class="booking__list_card-persons_count">2 персоны</div>
+                </div>
+              </div>
+              <div class="booking__list_card-link">
+                <a href="./booking.html" class="booking__list_card-btn">Забронировать</a>
+              </div>
+            </div>
+          </div>
+          <div class="booking__list_card">
+            <div class="booking__list_card-img">
+              <img src="./images/home/booking_2.png" alt="" />
+            </div>
+            <div class="booking__list_card-text">
+              <div class="booking__list_card-info">
+                <div class="booking__list_card-title">Superior</div>
+                <div class="booking__list_card-description">
+                  <div class="booking__list_card-beds_count">Двуспальная кровать</div>
+                  <div class="booking__list_card-persons_count">2 персоны</div>
+                </div>
+              </div>
+              <div class="booking__list_card-link">
+                <a href="./booking.html" class="booking__list_card-btn">Забронировать</a>
+              </div>
+            </div>
+          </div>
+          <div class="booking__list_card">
+            <div class="booking__list_card-img">
+              <img src="./images/home/booking_3.png" alt="" />
+            </div>
+            <div class="booking__list_card-text">
+              <div class="booking__list_card-info">
+                <div class="booking__list_card-title">Suite</div>
+                <div class="booking__list_card-description">
+                  <div class="booking__list_card-beds_count">Кровать king-size</div>
+                  <div class="booking__list_card-persons_count">2 персоны</div>
+                </div>
+              </div>
+              <div class="booking__list_card-link">
+                <a href="./booking.html" class="booking__list_card-btn">Забронировать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="reviews_container container">
+        <div class="reviews__title">
+          <h3 class="reviews__title-text">Отзывы наших гостей</h3>
+          <a class="reviews__title-link" href="./reviews.html"> Читать все отзывы </a>
+        </div>
+        <div class="reviews__slider">
+          <div class="reviews__slider_container swiper-container">
+            <div class="swiper-wrapper">
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__slider_item swiper-slide">
+                <div class="reviews__slider_item-img">
+                  <img src="./images/reviews/user_1.png" alt="" />
+                </div>
+                <div class="reviews__slider_item-name">Ирина Варшани</div>
+                <div class="reviews__slider_item-location">Будапешт, Венгрия</div>
+                <div class="reviews__slider_item_text">
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                  <div class="reviews__slider_item_text-review">
+                    Мы с мужем посетили Ришикеш в феврале 2017 года с целью оздоровления. Мы провели
+                    2 недели в аюрведическом центре Аюрведа Бхаван. За это время прошли
+                    очистительный курс (панчакарму): массажи, очистительные процедуры,
+                    вегетарианское питание. Надо сказать, что действительно наше самочувствие
+                    намного улучшилось, нервная система пришла в равновесие. Массажисты отличные,
+                    очень опытный аюрведический доктор, который назначал все процедуры. Номера
+                    чистые, персонал очень доброжелательный и ненавязчивый. Когда мы вернулись
+                    домой, то все заметили, что мы не только постройнели, но и помолодели. Нам все
+                    понравилось!
+                  </div>
+                  <div class="reviews__slider_item_text-quotes">
+                    <img src="./images/reviews/quotes.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="reviews__swiper-navigation">
+            <div class="swiper-prev">
+              <svg
+                width="22"
+                height="19"
+                viewBox="0 0 22 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.7936 0.473763L0.356098 8.91126C0.312515 8.9548 0.277941 9.00649 0.254351 9.0634C0.230761 9.12031 0.21862 9.1813 0.21862 9.2429C0.21862 9.3045 0.230761 9.3655 0.254351 9.42241C0.277941 9.47931 0.312515 9.53101 0.356098 9.57454L8.7936 18.012C8.88156 18.1 9.00085 18.1494 9.12524 18.1494C9.24963 18.1494 9.36893 18.1 9.45688 18.012C9.54484 17.9241 9.59425 17.8048 9.59425 17.6804C9.59425 17.556 9.54484 17.4367 9.45688 17.3488L1.81977 9.71165H21.3127C21.4371 9.71165 21.5563 9.66227 21.6442 9.57436C21.7321 9.48645 21.7815 9.36722 21.7815 9.2429C21.7815 9.11858 21.7321 8.99935 21.6442 8.91145C21.5563 8.82354 21.4371 8.77415 21.3127 8.77415H1.81977L9.45688 1.13704C9.54484 1.04909 9.59425 0.929794 9.59425 0.805405C9.59425 0.681015 9.54484 0.56172 9.45688 0.473763C9.36893 0.385807 9.24963 0.336393 9.12524 0.336393C9.00085 0.336393 8.88156 0.385807 8.7936 0.473763Z"
+                  fill="#22262A"
+                />
+              </svg>
+            </div>
+            <div class="swiper-next">
+              <svg
+                width="22"
+                height="19"
+                viewBox="0 0 22 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.1421 17.9891L21.5796 9.55163C21.6232 9.50809 21.6577 9.4564 21.6813 9.39949C21.7049 9.34259 21.717 9.28159 21.717 9.21999C21.717 9.15839 21.7049 9.09739 21.6813 9.04048C21.6577 8.98358 21.6232 8.93188 21.5796 8.88835L13.1421 0.450846C13.0541 0.36289 12.9348 0.313477 12.8104 0.313477C12.686 0.313477 12.5667 0.36289 12.4788 0.450847C12.3908 0.538803 12.3414 0.658098 12.3414 0.782487C12.3414 0.906877 12.3908 1.02617 12.4788 1.11413L20.1159 8.75124H0.622925C0.498605 8.75124 0.379376 8.80062 0.291469 8.88853C0.203561 8.97644 0.154175 9.09567 0.154175 9.21999C0.154175 9.34431 0.203561 9.46354 0.291469 9.55144C0.379376 9.63935 0.498605 9.68874 0.622925 9.68874H20.1159L12.4788 17.3258C12.3908 17.4138 12.3414 17.5331 12.3414 17.6575C12.3414 17.7819 12.3908 17.9012 12.4788 17.9891C12.5667 18.0771 12.686 18.1265 12.8104 18.1265C12.9348 18.1265 13.0541 18.0771 13.1421 17.9891Z"
+                  fill="#22262A"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cooperation">
+      <div class="cooperation_container container">
+        <div class="cooperation__title">
+          <h2 class="cooperation__title-text">Сотрудничество</h2>
+          <div class="cooperation__title_img">
+            <div class="cooperation__title_img-left">
+              <img src="./images/home/cooperation_left.png" alt="" />
+            </div>
+            <div class="cooperation__title_img-right">
+              <img src="./images/home/cooperation_right.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="cooperation__form_container">
+          <h2 class="cooperation__form-title">
+            Готовы к совместной работе? Мы приглашаем к взаимовыгодному сотрудничеству!
+          </h2>
+          <form class="cooperation__form" action="">
+            <div class="cooperation__form_container">
+              <input class="cooperation__form-inp" type="text" placeholder="Наталья" />
+              <span class="cooperation__form-line"></span>
+            </div>
+            <div class="cooperation__form_container">
+              <input class="cooperation__form-inp" type="text" placeholder="+ 7 (999) 999 99-99" />
+              <span class="cooperation__form-line"></span>
+            </div>
+
+            <div class="cooperation__form_container">
+              <input class="cooperation__form-inp" type="text" placeholder="Ваш комментарий..." />
+              <span class="cooperation__form-line"></span>
+            </div>
+            <span class="cooperation__form-data_processing">
+              <p>Нажимая кнопку «Отправить», я даю свое согласие</p>
+              <p>на обработку моих данных на <a href="./personal.html">условиях соглашения</a></p>
+            </span>
+            <button class="cooperation__form-submit">Отправить</button>
+          </form>
         </div>
       </div>
     </section>
@@ -308,5 +1274,7 @@
         </address>
       </div>
     </footer>
+    <script src="js/page-home.js"></script>
+    <script src="js/page-contacts.js"></script>
   </body>
 </html>

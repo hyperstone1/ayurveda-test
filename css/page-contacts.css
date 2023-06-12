@@ -166,75 +166,7 @@ iframe {
   color: #a90a9f;
   text-decoration: none;
 }
-.discont {
-  position: absolute;
-  top: 9rem;
-  left: 1rem;
-  display: flex;
-  background: #ffffff;
-}
-.discont__img {
-  width: 10.4166vw;
-  height: 12.448vw;
-}
-.discont__img img {
-  object-fit: contain;
-}
-.discont__info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* padding: 20px; */
-  width: 10.8vw;
-  margin-left: 4.5rem;
-  margin-right: 1.1rem;
-}
-.info__title {
-  font-weight: 300;
-  font-size: 1.823vw;
-  line-height: 120%;
-}
-.info__text {
-  font-weight: 300;
-  font-size: 0.72vw;
-  line-height: 1.4;
-  text-align: center;
-  letter-spacing: 0.07em;
-  color: #22262a;
-}
-.info__book {
-  margin-top: 2.8rem;
-}
-.book-btn {
-  border: none;
-  padding: 0.9rem 2.2rem;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 0.9375vw;
-  background: #b0008e;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-.book-btn:hover {
-  background: #ca04a3;
-}
-.book-btn:active {
-  background: #800266;
-}
-.discont__close {
-  display: flex;
-  align-items: start;
-  height: fit-content;
-  /* column-gap: 20px; */
-  padding-top: 1rem;
-  padding-right: 1rem;
-  cursor: pointer;
-  transition: 0.4s;
-}
-.discont__close:hover svg path {
-  stroke: #ff0101;
-}
+
 
 @media (max-width: 48em) {
   .contacts {

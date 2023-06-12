@@ -370,6 +370,7 @@ tr:last-of-type {
 /*Стили для скидки, нужно их вынести в обший файл*/
 .discont {
   position: absolute;
+  top: auto;
   bottom: -29rem;
   left: 1rem;
   display: flex;
@@ -545,7 +546,7 @@ tr:last-of-type {
   .td_price {
     display: flex;
     align-items: center;
-    gap: 1rem;  
+    gap: 1rem;
     order: 1;
   }
   .td_price-price {

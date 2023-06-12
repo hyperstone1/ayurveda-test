@@ -200,7 +200,7 @@ input[type='number'] {
 }
 
 section {
-  margin-bottom: 18rem;
+  margin-bottom: 20rem;
 }
 
 @media (max-width: 48em) {
@@ -216,7 +216,7 @@ section {
   }
 
   .container {
-    padding: 0 4rem;
+    padding: 0 3rem;
     width: 100%;
   }
 }
