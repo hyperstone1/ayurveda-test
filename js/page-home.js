@@ -171,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleResize() {
     const width = window.screen.width;
+
     if (width <= 375) {
       addBookingSlider();
     }
@@ -375,5 +376,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   window.addEventListener('load', handleResize);
+  window.addEventListener('resize', handleResize);
   // const sliderPanchakarma =document.querySelector('.slider-panchakarma')
 });
