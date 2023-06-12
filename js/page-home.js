@@ -77,40 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const scrollLink = document.querySelector('.about__right_description-link');
   scrollLink.addEventListener('click', (e) => smoothScroll(e, 'route'));
-  function smoothScroll(event, targetId) {
-    event.preventDefault();
 
-    var target = document.getElementById(targetId);
-
-    if (target) {
-      var targetOffsetTop = target.offsetTop; // Вертикальное смещение целевого элемента
-      var scrollDuration = 1000; // Длительность анимации в миллисекундах
-      var scrollStep = Math.PI / (scrollDuration / 15); // Шаг прокрутки
-
-      var scrollCount = 0;
-      var cosParameter = targetOffsetTop / 2;
-
-      var scrollMargin;
-      var startPosition = window.pageYOffset || document.documentElement.scrollTop; // Начальная позиция прокрутки
-
-      function scrollToTarget() {
-        scrollCount += scrollStep;
-
-        var cosScrollCount = cosParameter - cosParameter * Math.cos(scrollCount);
-        scrollMargin = startPosition + cosScrollCount;
-
-        window.scrollTo(0, scrollMargin);
-
-        if (scrollMargin < targetOffsetTop) {
-          requestAnimationFrame(scrollToTarget);
-        } else {
-          window.scrollTo(0, targetOffsetTop);
-        }
-      }
-
-      scrollToTarget();
-    }
-  }
 
   function addPaginationArrows() {
     let windowWidth = window.innerWidth;
@@ -368,6 +335,40 @@ document.addEventListener('DOMContentLoaded', function () {
           prevEl: '.route-button-prev',
         },
       });
+    }
+  }
+  function smoothScroll(event, targetId) {
+    event.preventDefault();
+
+    var target = document.getElementById(targetId);
+
+    if (target) {
+      var targetOffsetTop = target.offsetTop; // Вертикальное смещение целевого элемента
+      var scrollDuration = 1000; // Длительность анимации в миллисекундах
+      var scrollStep = Math.PI / (scrollDuration / 15); // Шаг прокрутки
+
+      var scrollCount = 0;
+      var cosParameter = targetOffsetTop / 2;
+
+      var scrollMargin;
+      var startPosition = window.pageYOffset || document.documentElement.scrollTop; // Начальная позиция прокрутки
+
+      function scrollToTarget() {
+        scrollCount += scrollStep;
+
+        var cosScrollCount = cosParameter - cosParameter * Math.cos(scrollCount);
+        scrollMargin = startPosition + cosScrollCount;
+
+        window.scrollTo(0, scrollMargin);
+
+        if (scrollMargin < targetOffsetTop) {
+          requestAnimationFrame(scrollToTarget);
+        } else {
+          window.scrollTo(0, targetOffsetTop);
+        }
+      }
+
+      scrollToTarget();
     }
   }
 
