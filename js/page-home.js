@@ -372,6 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.addEventListener('load', handleResize);
-  window.addEventListener('resize', handleResize);
+  // window.addEventListener('resize', handleResize);
   // const sliderPanchakarma =document.querySelector('.slider-panchakarma')
 });
