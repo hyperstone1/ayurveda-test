@@ -140,17 +140,26 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(width);
     if (width <= 768) {
       //section.class = "home_info"
+
       let textContainer = document.querySelector('.home_info__card_text-description');
+      let cardContainer = document.querySelector('.home_info__card');
+      let cardImg = document.querySelector('.home_info__card-img');
+
+      cardContainer.appendChild(cardImg);
       let textContent = textContainer.innerHTML;
       let maxLength = 500; // Максимальная длина текста
+      let restTextHome = '';
 
       const showAll = document.createElement('button');
       showAll.className = 'home_info__card_text-show_all';
       showAll.textContent = 'Читать все';
       if (textContent.length > maxLength) {
         let shortenedText = textContent.substring(0, maxLength) + '...';
+        restTextHome = textContent.substring(maxLength, textContent.length);
+        console.log(restTextHome);
         textContainer.innerHTML = `${shortenedText} `;
         textContainer.style.height = '81.3333vw';
+        textContainer.style.overflow = 'hidden';
       }
       let textList = document.querySelectorAll('.home_info__card_text-description p');
       textList.forEach((item, id) => {
@@ -161,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       showAll.addEventListener('click', () => {
         textContainer.style.height = '149.3333vw';
+        textContainer.style.overflow = 'initial';
         textContainer.innerHTML = textContent;
       });
 
