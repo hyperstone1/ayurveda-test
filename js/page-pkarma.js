@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const allProcedures = document.querySelectorAll('.procedures__list-item');
       const proceduresBlock = document.querySelector('.procedures__slider');
 
-      const proceduresNav = document.createElement('div');
-      proceduresNav.className = 'procedures-navigation';
       const arrowPrev = document.createElement('div');
       arrowPrev.className = 'procerures-navigation-prev';
       arrowPrev.innerHTML = `
@@ -52,9 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
         <path d="M10.9507 16.3041L17.7007 8.59151C17.7356 8.55171 17.7632 8.50446 17.7821 8.45244C17.801 8.40043 17.8107 8.34467 17.8107 8.28836C17.8107 8.23205 17.801 8.17629 17.7821 8.12428C17.7632 8.07226 17.7356 8.02501 17.7007 7.98521L10.9507 0.272662C10.8804 0.192262 10.7849 0.147095 10.6854 0.147095C10.5859 0.147095 10.4905 0.192263 10.4201 0.272662C10.3497 0.353061 10.3102 0.462106 10.3102 0.575808C10.3102 0.68951 10.3497 0.798555 10.4201 0.878954L16.5298 7.85988H0.935402C0.835946 7.85988 0.740563 7.90503 0.670237 7.98538C0.599911 8.06574 0.560402 8.17472 0.560402 8.28836C0.560402 8.402 0.599911 8.51098 0.670237 8.59134C0.740563 8.67169 0.835946 8.71684 0.935402 8.71684H16.5298L10.4201 15.6978C10.3497 15.7782 10.3102 15.8872 10.3102 16.0009C10.3102 16.1146 10.3497 16.2237 10.4201 16.3041C10.4905 16.3845 10.5859 16.4296 10.6854 16.4296C10.7849 16.4296 10.8804 16.3845 10.9507 16.3041Z" fill="#22262A"/>
       </svg>
       `;
-      proceduresNav.appendChild(arrowPrev);
-      proceduresNav.appendChild(arrowNext);
-      proceduresBlock.appendChild(proceduresNav);
+      let controls = document.createElement('div');
+      controls.className = 'procedures-controls';
+      let navigation = document.createElement('div');
+      navigation.className = 'procedures-navigation';
+
+      let pagination = document.createElement('div');
+      pagination.className = 'procedures-pagination';
+
+      navigation.appendChild(arrowPrev);
+      navigation.appendChild(arrowNext);
+      controls.appendChild(navigation);
+      controls.appendChild(pagination);
+      proceduresBlock.appendChild(controls);
 
       allProcedures.forEach((item) => {
         item.classList.add('swiper-slide');
@@ -64,6 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 'auto',
         centeredSlides: 'true',
         spaceBetween: rem(4),
+        pagination: {
+          el: '.procedures-pagination',
+          type: 'fraction',
+          formatFractionCurrent: function (current) {
+            return '0' + current;
+          },
+          formatFractionTotal: function (current) {
+            return '0' + current;
+          },
+        },
         navigation: {
           nextEl: '.procerures-navigation-next',
           prevEl: '.procerures-navigation-prev',

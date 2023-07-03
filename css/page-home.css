@@ -1337,33 +1337,41 @@
     border-radius: 15px;
     line-height: 1.5;
   }
-  .booking-controls {
+  .booking-controls,
+  .procedures-controls {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
   }
-  .booking-navigation {
+  .booking-navigation,
+  .procedures-navigation {
     position: relative;
     display: flex;
     gap: 4rem;
   }
-  .booking-pagination {
+  .booking-pagination,
+  .procedures-pagination {
     position: relative;
     width: fit-content;
   }
 
   .booking-button-prev,
+  .procedures-button-prev,
+  .procerures-navigation-next,
   .booking-button-next {
     position: relative;
     width: 4.341333vw;
     height: 4.6vw;
   }
   .booking-button-prev svg,
+  .procerures-navigation-prev svg,
+  .procerures-navigation-next svg,
   .booking-button-next svg {
     width: 100%;
     height: 100%;
   }
-  .booking-navigation::after {
+  .booking-navigation::after,
+  .procedures-navigation::after {
     content: '';
     position: absolute;
     width: 9.96266vw;
@@ -1373,7 +1381,8 @@
     background-color: #22262a;
     transform: rotate(106deg);
   }
-  .booking-pagination {
+  .booking-pagination,
+  .procedures-pagination {
     bottom: auto;
     font-weight: 400;
     font-size: 4vw;
