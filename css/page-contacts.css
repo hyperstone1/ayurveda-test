@@ -90,7 +90,7 @@
   font-weight: 300;
   font-size: 2.60416vw;
   line-height: 1.2;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.03em;
   color: #22262a;
 }
 .location_info__phones {
@@ -141,7 +141,7 @@
   gap: 8.2rem;
   width: 27.2rem;
   height: 3.6rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   background: #c344ab;
 }
 .location_info__arrives-btn_img {
@@ -156,6 +156,7 @@
   height: 100%;
 }
 .location_info__arrives-btn_text {
+  margin-top: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +174,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.29;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #c344ab;
 }
 .location_info__arrives-flights {
@@ -183,10 +184,12 @@
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.29;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #c344ab;
 }
 .location_info__arrives-transfer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: #22262a;
   text-align: center;
   font-size: 1.6rem;
@@ -303,33 +306,70 @@ iframe {
     margin-bottom: 2rem;
     font-size: 5.33vw;
   }
+  .location_container {
+    width: 100%;
+  }
+  .location__content {
+    padding-left: 0;
+  }
+  .location__content-info {
+    font-size: 3rem;
+    width: 100%;
+  }
   .location_info {
-    flex: 1 0 15rem;
+    order: 2;
+    width: 100%;
     margin-right: 0rem;
+  }
+  .location_info__arrives {
+    width: 58rem;
+  }
+  .location_info__arrives-btn {
+    width: 100%;
+    height: 7.2rem;
+    gap: 19rem;
+  }
+  .location_info__arrives-plane_img {
+    width: 8.6rem;
+    height: 9.6rem;
+  }
+  .location_info__arrives-plane_text {
+    font-size: 3rem;
+  }
+  .location_info__arrives-btn_img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .location_info__arrives-btn_text {
+    font-size: 3rem;
+  }
+  .location_info__arrives-flight {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+  }
+  .location_info__arrives-flights {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+  }
+  .location_info__arrives-transfer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
   }
   .contacts__location {
     padding-top: 20rem;
+    margin-top: 0;
     gap: 6rem;
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
-  .location__content:last-child,
-  .location__content:nth-child(2),
-  .location__content:nth-child(3) {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .location_info__phones {
-    grid-row: 4;
-  }
+
   .address-info,
   .phones-title,
   .phones-info,
-  .short-title,
-  .location__content-info {
+  .short-title {
     font-size: 4vw;
-  }
-  .location__content-title {
-    margin-bottom: 1rem;
   }
   .info-text {
     gap: 3rem;
@@ -338,7 +378,8 @@ iframe {
     font-size: 9.3vw;
   }
   .location__content-title {
-    font-size: 5.5vw;
+    margin-bottom: 1rem;
+    font-size: 4rem;
     margin-bottom: 4rem;
   }
   .container {

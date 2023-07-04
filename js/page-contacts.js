@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.tel');
   const discont = document.querySelector('.discont');
   const discontClose = document.querySelector('.discont__close');
+  const locationTitle = document.querySelector('.location_info-title');
+  const contactsLocation = document.querySelector('.contacts__location');
+  const locationInfo = document.querySelector('.location_info');
 
   links.forEach((link) => {
     link.addEventListener('click', (e) => {
@@ -37,4 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
       discont.style.display = 'none';
     }, 400);
   });
+
+  function handleResize() {
+    const width = window.innerWidth;
+    if (width < 768) {
+      console.log('tut');
+      contactsLocation.insertBefore(locationTitle, locationInfo);
+    } else {
+      locationInfo.appendChild(locationTitle);
+    }
+  }
+  // window.addEventListener('loaded', handleResize);
+  window.addEventListener('load', handleResize);
+  // window.addEventListener('onload', handleResize);
 });
