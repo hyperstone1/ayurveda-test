@@ -5,6 +5,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const locationTitle = document.querySelector('.location_info-title');
   const contactsLocation = document.querySelector('.contacts__location');
   const locationInfo = document.querySelector('.location_info');
+  const locationArrives = document.querySelector('.location_info__arrives');
+
+  const width = window.screen.width;
+  // ymaps.ready(function () {
+  //   var myMap = new ymaps.Map('map', {
+  //       center: [30.1228717, 78.3060407],
+  //       zoom: 14,
+  //       controls: [],
+  //       hideFooter: true,
+  //       behaviors: ['default'],
+  //     }),
+  //     myPlacemark1 = new ymaps.Placemark(
+  //       [30.1228717, 78.3060407],
+  //       {},
+  //       {
+  //         // Опции.
+  //         // Необходимо указать данный тип макета.
+  //         iconLayout: 'default#image',
+  //         // Своё изображение иконки метки.
+  //         // iconImageHref: './js/placemark.png',
+  //         // Размеры метки.
+  //         // iconImageSize: width < 768 ? [58, 78] : [96, 131.48],
+  //         // Смещение левого верхнего угла иконки относительно
+  //         // её "ножки" (точки привязки).
+  //         // iconImageOffset: [-49, -126],
+  //         // Смещение слоя с содержимым относительно слоя с картинкой.
+  //         // iconContentOffset: [15, 15],
+  //         // Макет содержимого.
+  //       },
+  //     );
+  //   //   myMap.container.fitToViewport();
+  //   myMap.setType('yandex#map');
+
+  //   myMap.geoObjects.add(myPlacemark1);
+  // });
 
   links.forEach((link) => {
     link.addEventListener('click', (e) => {
@@ -47,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('tut');
       contactsLocation.insertBefore(locationTitle, locationInfo);
     } else {
-      locationInfo.appendChild(locationTitle);
+      // locationInfo.appendChild(locationTitle);
+      locationInfo.insertBefore(locationTitle, locationArrives);
     }
   }
   // window.addEventListener('loaded', handleResize);
