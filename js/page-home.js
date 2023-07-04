@@ -91,15 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.classList.add('swiper-slide');
       });
     if (navigationContainer) {
-      let prevButton = document.createElement('div');
-      prevButton.className = 'swiper-button-prev';
-      prevButton.innerHTML = `
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.2064 23.7687L25.6439 15.3312C25.6875 15.2876 25.7221 15.2359 25.7456 15.179C25.7692 15.1221 25.7814 15.0611 25.7814 14.9995C25.7814 14.9379 25.7692 14.8769 25.7456 14.82C25.7221 14.7631 25.6875 14.7114 25.6439 14.6679L17.2064 6.23039C17.1184 6.14243 16.9991 6.09302 16.8748 6.09302C16.7504 6.09302 16.6311 6.14243 16.5431 6.23039C16.4552 6.31834 16.4057 6.43764 16.4057 6.56203C16.4057 6.68642 16.4552 6.80571 16.5431 6.89367L24.1802 14.5308H4.68726C4.56294 14.5308 4.44371 14.5802 4.3558 14.6681C4.26789 14.756 4.21851 14.8752 4.21851 14.9995C4.21851 15.1238 4.26789 15.2431 4.3558 15.331C4.44371 15.4189 4.56294 15.4683 4.68726 15.4683H24.1802L16.5431 23.1054C16.4552 23.1933 16.4057 23.3126 16.4057 23.437C16.4057 23.5614 16.4552 23.6807 16.5431 23.7687C16.6311 23.8566 16.7504 23.906 16.8748 23.906C16.9991 23.906 17.1184 23.8566 17.2064 23.7687Z" fill="#22262A"/>
-        </svg>
-      `;
-      navigationContainer.appendChild(prevButton);
-
       let nextButton = document.createElement('div');
       nextButton.className = 'swiper-button-next';
       nextButton.innerHTML = `
@@ -114,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var swiper = new Swiper('.home__slider', {
       slidesPerView: 'auto',
       spaceBetween: 20,
+      loop: true,
       pagination: {
         el: '.home__slider-pagination',
         type: 'custom',
@@ -140,7 +132,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleResize() {
     const width = window.screen.width;
     console.log(width);
+
     if (width <= 768) {
+      //section.class = "home"
+      let navigationContainer = document.querySelector('.home__slider-navigation');
+      let nextBtn = document.querySelector('.home__slider-navigation .swiper-button-next');
+
+      let prevBtn = document.createElement('div');
+      prevBtn.className = 'swiper-button-prev';
+      prevBtn.innerHTML = `
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.2064 23.7687L25.6439 15.3312C25.6875 15.2876 25.7221 15.2359 25.7456 15.179C25.7692 15.1221 25.7814 15.0611 25.7814 14.9995C25.7814 14.9379 25.7692 14.8769 25.7456 14.82C25.7221 14.7631 25.6875 14.7114 25.6439 14.6679L17.2064 6.23039C17.1184 6.14243 16.9991 6.09302 16.8748 6.09302C16.7504 6.09302 16.6311 6.14243 16.5431 6.23039C16.4552 6.31834 16.4057 6.43764 16.4057 6.56203C16.4057 6.68642 16.4552 6.80571 16.5431 6.89367L24.1802 14.5308H4.68726C4.56294 14.5308 4.44371 14.5802 4.3558 14.6681C4.26789 14.756 4.21851 14.8752 4.21851 14.9995C4.21851 15.1238 4.26789 15.2431 4.3558 15.331C4.44371 15.4189 4.56294 15.4683 4.68726 15.4683H24.1802L16.5431 23.1054C16.4552 23.1933 16.4057 23.3126 16.4057 23.437C16.4057 23.5614 16.4552 23.6807 16.5431 23.7687C16.6311 23.8566 16.7504 23.906 16.8748 23.906C16.9991 23.906 17.1184 23.8566 17.2064 23.7687Z" fill="#22262A"/>
+        </svg>
+      `;
+      navigationContainer.insertBefore(prevBtn, nextBtn);
+
       //section.class = "home_info"
 
       let textContainer = document.querySelector('.home_info__card_text-description');

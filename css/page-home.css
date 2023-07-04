@@ -81,7 +81,7 @@
   display: flex;
   gap: 3.7rem;
   padding-top: 7.1rem;
-  left: -13rem;
+  left: -4rem;
 }
 /* .home__slider-navigation:after {
   content: '';
@@ -410,6 +410,7 @@
 }
 .license-img img {
   border-radius: 10px;
+  object-fit: cover;
 }
 .license__advantages {
   width: 29.5rem;
@@ -619,8 +620,16 @@
   color: rgba(34, 38, 42, 0.6);
 }
 .booking__list_card-beds_count {
+  color: rgba(34, 38, 42, 0.6);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.29;
 }
 .booking__list_card-persons_count {
+  color: rgba(34, 38, 42, 0.6);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.29;
 }
 .booking__list_card-link {
 }
@@ -1327,15 +1336,32 @@
   .booking__list_card-description {
     font-size: 4vw;
   }
+  .booking__list_card-beds_count {
+    padding-right: 2rem;
+    border-right: 1px solid #dadada;
+    color: rgba(34, 38, 42, 0.6);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .booking__list_card-persons_count {
+    color: rgba(34, 38, 42, 0.6);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
   .booking__list_card-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 145px;
-    height: 39px;
-    padding: 1.8rem 4.4rem;
-    font-size: 4vw;
-    border-radius: 15px;
-    line-height: 1.5;
+    width: 29rem;
+    height: 7.8rem;
+    padding: 0;
+    font-size: 3rem;
+    font-weight: 400;
+    border-radius: 3rem;
+    line-height: 1.7;
   }
   .booking-controls,
   .procedures-controls {
@@ -1356,16 +1382,16 @@
   }
 
   .booking-button-prev,
-  .procedures-button-prev,
-  .procerures-navigation-next,
+  .procedures-navigation-prev,
+  .procedures-navigation-next,
   .booking-button-next {
     position: relative;
     width: 4.341333vw;
     height: 4.6vw;
   }
   .booking-button-prev svg,
-  .procerures-navigation-prev svg,
-  .procerures-navigation-next svg,
+  .procedures-navigation-prev svg,
+  .procedures-navigation-next svg,
   .booking-button-next svg {
     width: 100%;
     height: 100%;

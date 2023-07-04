@@ -170,3 +170,80 @@
 .inactive svg path {
   fill-opacity: 0.6;
 }
+@media (max-width: 48em) {
+  .reviews {
+    padding-top: 23.2rem;
+  }
+  .reviews-title {
+    font-size: 9rem;
+    padding-bottom: 10rem;
+    letter-spacing: -1.35px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  #my-video {
+    height: 30.6rem;
+  }
+  .video-js .vjs-big-play-button {
+    top: 50% !important;
+    left: 56% !important;
+    width: 8rem !important;
+    height: 8rem !important;
+    font-size: 5.2rem !important;
+  }
+  .reviews_list__list-item {
+    gap: 2rem;
+    flex-direction: column;
+    padding: 3rem 5.8rem 6.4rem 3rem;
+  }
+  .reviews_list__user {
+    width: 100%;
+  }
+  .reviews_list__user-img {
+    width: 14.8rem;
+    height: 14.8rem;
+  }
+  .reviews_list__user-img img {
+    width: 13.4rem;
+    height: 13.4rem;
+    object-fit: cover;
+  }
+  .reviews_list__user_info-name {
+    font-size: 4rem;
+  }
+  .reviews_list__user_info-location {
+    font-size: 3rem;
+  }
+  .reviews_list__list_text {
+    width: 100%;
+  }
+  .reviews_list__list_text-quotes {
+    width: 4.8rem;
+    height: 4.8rem;
+    flex: none;
+  }
+  .reviews_list__list_text-quotes img {
+    width: 100%;
+    height: 100%;
+  }
+  .reviews_list__list_text-review {
+    width: 100%;
+    font-size: 3rem;
+  }
+  .pagination-pages {
+    font-size: 3rem;
+  }
+  .pagination-pages::after {
+    top: 1.3rem;
+    width: 4rem;
+  }
+  .pages-links svg {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .pages-links::after {
+    width: 7.6rem;
+    right: 3rem;
+    top: 2rem;
+  }
+}
