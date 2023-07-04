@@ -328,7 +328,7 @@ tr:last-of-type {
   z-index: 1;
   top: 4.2rem;
   left: -2.1rem;
-  width: 22.4rem !important;
+  width: 22.4rem;
   height: 6.2rem;
   display: flex;
   align-items: center;
@@ -341,6 +341,13 @@ tr:last-of-type {
   line-height: 129%;
   opacity: 0;
   transition: all 0.3s;
+}
+.prices_info .services_tooltip .tooltiptext {
+  width: 43.9rem;
+  height: 8.6rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
 }
 .close-btn {
   display: flex;
@@ -662,6 +669,9 @@ tr:last-of-type {
     height: 18.6rem !important;
     top: 8.2rem;
     left: -24rem;
+    font-size: 4vw;
+  }
+  .prices_info .services_tooltip .tooltiptext {
     font-size: 4vw;
   }
 

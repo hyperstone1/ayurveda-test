@@ -364,6 +364,7 @@
   color: #22262a;
   font-size: 1.8rem;
   font-weight: 400;
+  line-height: initial;
 }
 .about__bottom_text-subscription::before {
   position: absolute;
@@ -371,7 +372,7 @@
   width: 3.5rem;
   height: 1px;
   left: -4.4rem;
-  bottom: 2.2rem;
+  bottom: 1.2rem;
   background: #22262a;
 }
 .about__buklet {
