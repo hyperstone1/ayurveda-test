@@ -657,16 +657,19 @@ tr:last-of-type {
     width: 4.26666vw;
   }
   .services_tooltip .tooltiptext {
-    width: 68.533vw;
+    padding: 3rem;
+    width: 51.4rem !important;
+    height: 18.6rem !important;
     top: 8.2rem;
     left: -24rem;
     font-size: 4vw;
   }
 
   .services_tooltip .tooltiptext::after {
-    margin-left: -2rem;
+    margin-left: -7.6rem;
     left: 30.7rem;
-    border-width: 4vw;
+    bottom: 99%;
+    border-width: 2.5rem;
     border-bottom-width: 6.4vw;
   }
   .close-btn {
