@@ -302,7 +302,7 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
-                  <div id="calendar">
+                  <div class="calendar">
                     <div class="calendar-container">
                       <div id="month1" class="calendar-month"></div>
                       <div id="month2" class="calendar-month"></div>
@@ -416,6 +416,12 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
+                  <div class="calendar">
+                    <div class="calendar-container">
+                      <div id="month1" class="calendar-month"></div>
+                      <div id="month2" class="calendar-month"></div>
+                    </div>
+                  </div>
 
                   <div class="rooms__booking">
                     <button class="rooms__booking-btn btn">Забронировать</button>
@@ -524,6 +530,12 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
+                  <div class="calendar">
+                    <div class="calendar-container">
+                      <div id="month1" class="calendar-month"></div>
+                      <div id="month2" class="calendar-month"></div>
+                    </div>
+                  </div>
 
                   <div class="rooms__booking">
                     <button class="rooms__booking-btn btn">Забронировать</button>
@@ -550,13 +562,15 @@
       </div>
     </section>
     <style>
-      #calendar {
+      .calendar {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         position: absolute;
         top: 6rem;
+        left: 0;
         background-color: #f8f8f8;
         padding: 2rem;
         opacity: 0;
@@ -568,7 +582,7 @@
       .calendar-container {
         display: flex;
       }
-      #calendar.visible {
+      .calendar.visible {
         opacity: 1;
         height: auto;
       }
@@ -639,7 +653,7 @@
     </style>
 
     <script>
-      var calendar = document.getElementById('calendar');
+      var calendars = document.querySelectorAll('.calendar');
       var dateBtn = document.querySelectorAll('.rooms__date-wrapper');
       var month1El = document.getElementById('month1');
       var month2El = document.getElementById('month2');
@@ -761,13 +775,28 @@
       </div>
     </div>
   `;
-
-        calendar.innerHTML = html;
+        calendars.forEach((item) => {
+          item.innerHTML = html;
+        });
       }
 
       dateBtn.forEach((btn) => {
         btn.addEventListener('click', () => {
-          calendar.classList.toggle('visible');
+          const roomsDate = btn.closest('.rooms__date');
+
+          const calendar = roomsDate.querySelector('.calendar');
+          console.log('btnForCalendar: ', calendar);
+          calendars.forEach((item, id) => {
+            if (item === calendar) {
+              if (calendar.classList.contains('visible')) {
+                calendar.classList.remove('visible');
+              } else {
+                calendar.classList.add('visible');
+              }
+            } else {
+              item.classList.remove('visible');
+            }
+          });
         });
         renderCalendar(moment());
       });
