@@ -327,6 +327,7 @@ iframe {
     order: 2;
     width: 100%;
     margin-right: 0rem;
+    border: none;
   }
   .location_info__arrives {
     width: 58rem;
@@ -382,6 +383,7 @@ iframe {
     gap: 3rem;
   }
   .location_info-title {
+    display: none;
     font-size: 9.3vw;
   }
   .location__content-title {
@@ -414,7 +416,7 @@ iframe {
   iframe {
     height: 512px;
   }
-  .discont {
+  .contacts .discont {
     display: none;
   }
 }

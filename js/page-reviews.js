@@ -297,7 +297,7 @@ function createPagesNumbers(page) {
   const paginationPages = document.querySelector('.pagination-pages');
   const first = page;
   const last = Math.ceil(data.length / itemsPerPage);
-  if (!paginationPages) {
+  if (!paginationPages && pagination) {
     const pages = document.createElement('div');
     pages.classList.add('pagination-pages');
     const firstPage = document.createElement('span');
@@ -313,7 +313,9 @@ function createPagesNumbers(page) {
   } else {
     const firstPage = document.querySelector('.current_page');
     // const lastPage = document.querySelector('.last_page');
-    firstPage.textContent = first;
+    if (firstPage) {
+      firstPage.textContent = first;
+    }
   }
 }
 
@@ -343,43 +345,46 @@ function createArrows() {
     console.log(links);
   }
   const paginationElements = document.querySelectorAll('.link');
-  paginationElements.forEach((link, i) => {
-    if (i === 0) {
-    }
-    link.addEventListener('click', () => {
-      if (link.classList.contains('prev-page')) {
-        if (currentPage > 1) {
-          currentPage--;
-          link.classList.contains('inactive') ? link.classList.remove('inactive') : null;
-          paginationElements[1].classList.remove('inactive');
-        } else {
-          paginationElements[1].classList.remove('inactive');
-        }
-        if (currentPage === 1) {
-          console.log('ravno');
-          link.classList.add('inactive');
-        }
-      } else if (link.classList.contains('next-page')) {
-        if (currentPage < totalPages) {
-          currentPage++;
-          link.classList.contains('inactive') ? link.classList.remove('inactive') : null;
-          paginationElements[0].classList.remove('inactive');
-        } else {
-          paginationElements[0].classList.remove('inactive');
-        }
-        if (currentPage === totalPages) {
-          link.classList.add('inactive');
-        }
+  paginationElements &&
+    paginationElements.forEach((link, i) => {
+      if (i === 0) {
       }
-      displayItems(currentPage); // Отображаем элементы на выбранной странице
-      updatePaginationLinks(currentPage); // Обновляем стрелки пагинации после переключения страницы
-      createPagesNumbers(currentPage); // Меняем цифру текущей страницы
-      window.scroll({ top: 0 });
+      link.addEventListener('click', () => {
+        if (link.classList.contains('prev-page')) {
+          if (currentPage > 1) {
+            currentPage--;
+            link.classList.contains('inactive') ? link.classList.remove('inactive') : null;
+            paginationElements[1].classList.remove('inactive');
+          } else {
+            paginationElements[1].classList.remove('inactive');
+          }
+          if (currentPage === 1) {
+            console.log('ravno');
+            link.classList.add('inactive');
+          }
+        } else if (link.classList.contains('next-page')) {
+          if (currentPage < totalPages) {
+            currentPage++;
+            link.classList.contains('inactive') ? link.classList.remove('inactive') : null;
+            paginationElements[0].classList.remove('inactive');
+          } else {
+            paginationElements[0].classList.remove('inactive');
+          }
+          if (currentPage === totalPages) {
+            link.classList.add('inactive');
+          }
+        }
+        displayItems(currentPage); // Отображаем элементы на выбранной странице
+        updatePaginationLinks(currentPage); // Обновляем стрелки пагинации после переключения страницы
+        createPagesNumbers(currentPage); // Меняем цифру текущей страницы
+        window.scroll({ top: 0 });
+      });
     });
-  });
 }
 // Показать первую страницу при загрузке страницы
-displayItems(currentPage);
-createPagesNumbers(currentPage);
-// Создаем ссылки пагинации
-createArrows();
+if (container) {
+  displayItems(currentPage);
+  createPagesNumbers(currentPage);
+  // Создаем ссылки пагинации
+  createArrows();
+}

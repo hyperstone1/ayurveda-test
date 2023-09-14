@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', function () {
     var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollPosition >= 100) {
+    if (scrollPosition >= 20) {
       header.classList.add('sticky');
     } else {
       header.classList.remove('sticky');
@@ -132,6 +132,16 @@ document.addEventListener('DOMContentLoaded', function () {
       this.document.body.style.overflow = 'hidden';
     } else {
       this.document.body.style.overflow = 'initial';
+    }
+  });
+  window.addEventListener('load', function () {
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(scrollPosition);
+
+    if (scrollPosition >= 20) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
     }
   });
 });

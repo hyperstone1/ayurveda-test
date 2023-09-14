@@ -41,21 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
   //   myMap.geoObjects.add(myPlacemark1);
   // });
 
-  links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      let phoneNumber = e.target.textContent;
-      console.log(phoneNumber);
-      console.log(e.target.id);
-      navigator.clipboard
-        .writeText(phoneNumber)
-        .then(function () {
-          showTooltip('copied!', e.target.id);
-        })
-        .catch(function () {
-          showTooltip('Failed to copy.');
-        });
+  links &&
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        let phoneNumber = e.target.textContent;
+        console.log(phoneNumber);
+        console.log(e.target.id);
+        navigator.clipboard
+          .writeText(phoneNumber)
+          .then(function () {
+            showTooltip('copied!', e.target.id);
+          })
+          .catch(function () {
+            showTooltip('Failed to copy.');
+          });
+      });
     });
-  });
   function showTooltip(message, elementId) {
     var tooltip = document.getElementById(elementId + '-tooltip');
     tooltip.innerText = message;
@@ -79,11 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleResize() {
     const width = window.innerWidth;
     if (width < 768) {
-      console.log('tut');
-      contactsLocation.insertBefore(locationTitle, locationInfo);
+      contactsLocation && contactsLocation.insertBefore(locationTitle, locationInfo);
     } else {
       // locationInfo.appendChild(locationTitle);
-      locationInfo.insertBefore(locationTitle, locationArrives);
+      locationInfo && locationInfo.insertBefore(locationTitle, locationArrives);
     }
   }
   // window.addEventListener('loaded', handleResize);
