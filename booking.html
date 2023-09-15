@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/page-booking.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+
     <script src="js/page-booking.js"></script>
     <script src="js/header.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -831,7 +833,7 @@
               <input type="text" placeholder="ФИО" />
             </div>
             <div class="modal__form-wrapper">
-              <input type="text" placeholder="+ 7 (999) 999 99-99" />
+              <input id="phone" type="text" placeholder="+ 7 (999) 999 99-99" />
             </div>
             <div class="modal__form-wrapper">
               <input type="text" placeholder="Email" />
@@ -849,6 +851,30 @@
           </div>
           <button class="modal__form-btn">Отправить запрос</button>
         </div>
+      </div>
+    </div>
+    <div class="not_choised">
+      <div class="not_choised-container">
+        <div class="not_choised-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M17.7147 17.7145L6.28613 6.28595M17.7147 6.28595L6.28613 17.7145"
+              stroke="#22262A"
+              stroke-opacity="0.6"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="not_choised__title">Даты не выбраны!</div>
+        <div class="not_choised__text">Вам необходимо выбрать даты, чтобы забронировать номер.</div>
       </div>
     </div>
     <footer class="footer">

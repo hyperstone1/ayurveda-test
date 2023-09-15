@@ -8,6 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingRemark = document.querySelectorAll('.rooms__booking-remark');
   const tooltiptextBooking = document.querySelectorAll('.tooltiptext-booking');
   const tooltipCloseBtn = document.querySelectorAll('.tooltiptext-booking--close-btn');
+  const notChoised = document.querySelector('.not_choised');
+  const notChoisedClose = document.querySelector('.not_choised-close');
+
+  const phone = document.getElementById('phone');
+  const maskOptions = {
+    mask: '+{7}(000) 000-00-00',
+  };
+  const mask = IMask(phone, maskOptions);
+
+  notChoisedClose.addEventListener('click', () => {
+    if (notChoised.classList.contains('visible')) {
+      notChoised.classList.remove('visible');
+      notChoised.classList.add('invisible');
+    } else {
+      notChoised.classList.add('visible');
+      notChoised.classList.remove('invisible');
+    }
+  });
 
   bookingRemark.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -15,9 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const tooltipChild = parent.querySelector('.tooltiptext-booking');
       tooltiptextBooking.forEach((item) => {
         if (item === tooltipChild) {
-          tooltipChild.classList.toggle('visible');
+          if (tooltipChild.classList.contains('visible')) {
+            tooltipChild.classList.remove('visible');
+            tooltipChild.classList.add('invisible');
+          } else {
+            tooltipChild.classList.add('visible');
+            tooltipChild.classList.remove('invisible');
+          }
         } else {
           item.classList.remove('visible');
+          tooltipChild.classList.add('invisible');
         }
       });
     });
@@ -28,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const parent = e.target.closest('.rooms__booking');
       const tooltipChild = parent.querySelector('.tooltiptext-booking');
       tooltipChild.classList.remove('visible');
+      tooltipChild.classList.add('invisible');
     });
   });
 
@@ -48,9 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   bookingBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      modal.classList.add('visible');
       const data = btn.dataset.apps;
       if (data === 'standart') {
+        if (dates.standart.length < 1) {
+          notChoised.classList.add('visible');
+          return;
+        }
         const selectedDates = dates.standart.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
         const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
         const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
@@ -58,6 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDate.textContent = `${startDate} - ${endDate}`;
       }
       if (data === 'superior') {
+        if (dates.superior.length < 1) {
+          notChoised.classList.add('visible');
+          return;
+        }
         const selectedDates = dates.superior.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
         const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
         const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
@@ -65,12 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDate.textContent = `${startDate} - ${endDate}`;
       }
       if (data === 'suite') {
+        if (dates.suite.length < 1) {
+          notChoised.classList.add('visible');
+          return;
+        }
         const selectedDates = dates.suite.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
         const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
         const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
         modalType.textContent = capitalizeFirstLetter(data);
         modalDate.textContent = `${startDate} - ${endDate}`;
       }
+      modal.classList.add('visible');
+
       calendars.forEach((calendar) => {
         calendar.classList.remove('visible');
       });
@@ -323,8 +362,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (item === calendar) {
           if (calendar.classList.contains('visible')) {
             calendar.classList.remove('visible');
+            calendar.classList.add('invisible');
           } else {
-            calendar.classList.add('visible');
+            item.classList.add('visible');
+            item.classList.remove('invisible');
           }
         } else {
           item.classList.remove('visible');
