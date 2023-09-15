@@ -302,15 +302,14 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
-                  <div class="calendar">
-                    <div class="calendar-container">
-                      <div id="month1" class="calendar-month"></div>
-                      <div id="month2" class="calendar-month"></div>
-                    </div>
+                  <div data-apps="standart" class="calendar">
+                    <div class="calendar__container"></div>
                   </div>
 
                   <div class="rooms__booking">
-                    <button class="rooms__booking-btn btn">Забронировать</button>
+                    <button data-apps="standart" class="rooms__booking-btn btn">
+                      Забронировать
+                    </button>
                     <div class="rooms__booking-remark">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -341,7 +340,7 @@
                 </div>
                 <div class="rooms__content-count--info">2 человека</div>
               </div>
-              <div class="rooms__content-title">Standart</div>
+              <div class="rooms__content-title">Superior</div>
               <div class="rooms__main">
                 <div class="rooms__content-description">
                   В стоимость включено: курс панчакармы; трехразовое аюрведическое питание;
@@ -416,15 +415,14 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
-                  <div class="calendar">
-                    <div class="calendar-container">
-                      <div id="month1" class="calendar-month"></div>
-                      <div id="month2" class="calendar-month"></div>
-                    </div>
+                  <div data-apps="superior" class="calendar">
+                    <div class="calendar__container"></div>
                   </div>
 
                   <div class="rooms__booking">
-                    <button class="rooms__booking-btn btn">Забронировать</button>
+                    <button data-apps="superior" class="rooms__booking-btn btn">
+                      Забронировать
+                    </button>
                     <div class="rooms__booking-remark">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -455,7 +453,7 @@
                 </div>
                 <div class="rooms__content-count--info">2 человека</div>
               </div>
-              <div class="rooms__content-title">Standart</div>
+              <div class="rooms__content-title">Suite</div>
               <div class="rooms__main">
                 <div class="rooms__content-description">
                   В стоимость включено: курс панчакармы; трехразовое аюрведическое питание;
@@ -530,15 +528,12 @@
                     </div>
                     <div class="rooms__info-title">Выбрать даты</div>
                   </div>
-                  <div class="calendar">
-                    <div class="calendar-container">
-                      <div id="month1" class="calendar-month"></div>
-                      <div id="month2" class="calendar-month"></div>
-                    </div>
+                  <div data-apps="suite" class="calendar">
+                    <div class="calendar__container"></div>
                   </div>
 
                   <div class="rooms__booking">
-                    <button class="rooms__booking-btn btn">Забронировать</button>
+                    <button data-apps="suite" class="rooms__booking-btn btn">Забронировать</button>
                     <div class="rooms__booking-remark">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -579,8 +574,18 @@
         overflow: hidden;
         border-radius: 1rem;
       }
+      .calendar__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
       .calendar-container {
         display: flex;
+        flex-direction: column;
+      }
+      .calendar__container {
+        display: flex;
+        gap: 6rem;
       }
       .calendar.visible {
         opacity: 1;
@@ -652,163 +657,6 @@
       } */
     </style>
 
-    <script>
-      var calendars = document.querySelectorAll('.calendar');
-      var dateBtn = document.querySelectorAll('.rooms__date-wrapper');
-      var month1El = document.getElementById('month1');
-      var month2El = document.getElementById('month2');
-
-      function renderCalendar(date) {
-        var month1 = moment(date);
-        var month2 = moment(month1).add(1, 'months');
-
-        var html = `
-        <div class="calendar__header-wrapper">
-     
-        
-    <div class="calendar-header-wrapper">
-      <button onclick="renderCalendar(moment(${month1.format('x')}).subtract(1, 'months'))">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <path d="M12.7934 6.23133L4.35585 14.6688C4.31227 14.7124 4.2777 14.7641 4.25411 14.821C4.23052 14.8779 4.21838 14.9389 4.21838 15.0005C4.21838 15.0621 4.23052 15.1231 4.25411 15.18C4.2777 15.2369 4.31227 15.2886 4.35585 15.3321L12.7934 23.7696C12.8813 23.8576 13.0006 23.907 13.125 23.907C13.2494 23.907 13.3687 23.8576 13.4566 23.7696C13.5446 23.6817 13.594 23.5624 13.594 23.438C13.594 23.3136 13.5446 23.1943 13.4566 23.1063L5.81953 15.4692H25.3125C25.4368 15.4692 25.556 15.4198 25.644 15.3319C25.7319 15.244 25.7812 15.1248 25.7812 15.0005C25.7812 14.8762 25.7319 14.7569 25.644 14.669C25.556 14.5811 25.4368 14.5317 25.3125 14.5317H5.81953L13.4566 6.89461C13.5446 6.80666 13.594 6.68736 13.594 6.56297C13.594 6.43858 13.5446 6.31929 13.4566 6.23133C13.3687 6.14338 13.2494 6.09396 13.125 6.09396C13.0006 6.09396 12.8813 6.14338 12.7934 6.23133Z" fill="#22262A" fill-opacity="0.6"/>
-        </svg>
-      </button>
-      <span>${month1.format('MMMM YYYY')}</span>
-    </div>
-    <div class="calendar-header-wrapper">
-      <span>${month2.format('MMMM YYYY')}</span>
-      <button onclick="renderCalendar(moment(${month1.format('x')}).add(1, 'months'))">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-          <path d="M17.2066 23.7687L25.6441 15.3312C25.6877 15.2876 25.7223 15.2359 25.7459 15.179C25.7695 15.1221 25.7816 15.0611 25.7816 14.9995C25.7816 14.9379 25.7695 14.8769 25.7459 14.82C25.7223 14.7631 25.6877 14.7114 25.6441 14.6679L17.2066 6.23039C17.1187 6.14243 16.9994 6.09302 16.875 6.09302C16.7506 6.09302 16.6313 6.14243 16.5434 6.23039C16.4554 6.31834 16.406 6.43764 16.406 6.56203C16.406 6.68642 16.4554 6.80571 16.5434 6.89367L24.1805 14.5308H4.6875C4.56318 14.5308 4.44395 14.5802 4.35604 14.6681C4.26814 14.756 4.21875 14.8752 4.21875 14.9995C4.21875 15.1238 4.26814 15.2431 4.35604 15.331C4.44395 15.4189 4.56318 15.4683 4.6875 15.4683H24.1805L16.5434 23.1054C16.4554 23.1933 16.406 23.3126 16.406 23.437C16.406 23.5614 16.4554 23.6807 16.5434 23.7687C16.6313 23.8566 16.7506 23.906 16.875 23.906C16.9994 23.906 17.1187 23.8566 17.2066 23.7687Z" fill="#22262A"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-    <div class="calendar-container">
-      <div id="month1" class="calendar-month">
-        <table class="calendar-table">
-          <thead>
-            <tr>
-              <th>пн</th>
-              <th>вт</th>
-              <th>ср</th>
-              <th>чт</th>
-              <th>пт</th>
-              <th>сб</th>
-              <th>вс</th>
-            </tr>
-          </thead>
-          <tbody>
-  `;
-
-        var start1 = moment(month1).startOf('month');
-        var end1 = moment(month1).endOf('month');
-        var start2 = moment(month2).startOf('month');
-        var end2 = moment(month2).endOf('month');
-
-        var date = moment(start1).startOf('week');
-
-        while (date.isBefore(end1)) {
-          if (date.weekday() === 0) {
-            html += '<tr>';
-          }
-
-          if (date.isBefore(start1) || date.isAfter(end1)) {
-            html += '<td></td>';
-          } else {
-            html += `<td${
-              date.isSame(moment(), 'day') ? ' class="day today"' : ' class="day"'
-            }>${date.format('D')}</td>`;
-          }
-
-          if (date.weekday() === 6) {
-            html += '</tr>';
-          }
-
-          date.add(1, 'days');
-        }
-
-        html += `
-          </tbody>
-        </table>
-      </div>
-      <div id="month2" class="calendar-month">
-        <table class="calendar-table">
-          <thead>
-            <tr>
-              <th>пн</th>
-              <th>вт</th>
-              <th>ср</th>
-              <th>чт</th>
-              <th>пт</th>
-              <th>сб</th>
-              <th>вс</th>
-            </tr>
-          </thead>
-          <tbody>
-  `;
-
-        date = moment(start2).startOf('week');
-
-        while (date.isBefore(end2)) {
-          if (date.weekday() === 0) {
-            html += '<tr>';
-          }
-
-          if (date.isBefore(start2) || date.isAfter(end2)) {
-            html += '<td></td>';
-          } else {
-            html += `<td${date.isSame(moment(), 'day') ? ' class="today"' : ''}>${date.format(
-              'D',
-            )}</td>`;
-          }
-
-          if (date.weekday() === 6) {
-            html += '</tr>';
-          }
-
-          date.add(1, 'days');
-        }
-
-        html += `
-          </tbody>
-        </table>
-      </div>
-    </div>
-  `;
-        calendars.forEach((item) => {
-          item.innerHTML = html;
-        });
-      }
-
-      dateBtn.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const roomsDate = btn.closest('.rooms__date');
-
-          const calendar = roomsDate.querySelector('.calendar');
-          console.log('btnForCalendar: ', calendar);
-          calendars.forEach((item, id) => {
-            if (item === calendar) {
-              if (calendar.classList.contains('visible')) {
-                calendar.classList.remove('visible');
-              } else {
-                calendar.classList.add('visible');
-              }
-            } else {
-              item.classList.remove('visible');
-            }
-          });
-        });
-        renderCalendar(moment());
-      });
-    </script>
-    <script>
-      const days = document.querySelectorAll('.day');
-      days.forEach((item) => {
-        item.addEventListener('click', (e) => {
-          item.classList.toggle('active');
-        });
-      });
-    </script>
     <section class="accept">
       <div class="accept_container container">
         <div class="accept__wrapper">
