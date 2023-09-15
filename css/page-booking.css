@@ -289,14 +289,19 @@
 .rooms__info {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .rooms__info-title {
   width: 19rem;
+  display: flex;
+  align-items: center;
   color: #22262a;
   font-size: 1.8rem;
   font-weight: 600;
-  line-height: 1.2; /* 21.6px */
+  line-height: 1; /* 21.6px */
+}
+.rooms__info-title.date {
+  margin-top: 0.6rem;
 }
 .rooms__info-description {
   display: flex;
@@ -305,7 +310,7 @@
   color: #22262a;
   font-size: 1.8rem;
   font-weight: 400;
-  line-height: 1.29; /* 23.22px */
+  line-height: 1; /* 23.22px */
 }
 .rooms__info-counter {
   display: flex;
@@ -323,6 +328,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .rooms__info-counter--plus img,
 .rooms__info-counter--minus img {
@@ -510,14 +516,14 @@
   color: var(--black, #22262a);
   font-size: 1.8rem;
   font-weight: 600;
-  line-height: 1.2; /* 21.6px */
+  line-height: 1.2;
 }
 .modal__content-date,
 .modal__content-type {
   color: var(--black, #22262a);
   font-size: 1.8rem;
   font-weight: 400;
-  line-height: 1.29; /* 23.22px */
+  line-height: 1;
 }
 .modal__form {
   display: flex;
@@ -704,6 +710,10 @@ form {
 }
 .day {
   border: 1px solid #f8f8f8;
+  cursor: pointer;
+}
+.day.past {
+  cursor: context-menu;
 }
 .calendar-table td.past {
   color: #22262a54;
@@ -711,6 +721,9 @@ form {
 .rooms__booking-remark {
   width: 1.7rem;
   height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 .rooms__booking-remark svg {
@@ -780,11 +793,13 @@ form {
     display: block;
     height: auto;
     opacity: 1;
+    z-index: 2;
   }
   100% {
     display: block;
     height: auto;
     opacity: 0;
+    z-index: 2;
   }
 }
 .not_choised {
@@ -801,7 +816,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: -3;
   opacity: 0;
   /* transition: opacity 0.5s ease-in-out; */
   /* animation: opacNotChoised 0.5s ease-in-out; */
@@ -815,6 +830,7 @@ form {
   height: auto;
   opacity: 1;
   animation: appearNotChoised 0.5s ease-in-out;
+  z-index: 2;
 }
 .not_choised-container {
   position: relative;

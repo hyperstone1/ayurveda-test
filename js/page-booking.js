@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const tooltipCloseBtn = document.querySelectorAll('.tooltiptext-booking--close-btn');
   const notChoised = document.querySelector('.not_choised');
   const notChoisedClose = document.querySelector('.not_choised-close');
+  const peopleAdd = document.querySelectorAll('.rooms__info-counter--plus');
+  const peopleMinus = document.querySelectorAll('.rooms__info-counter--minus');
+  const peopleCount = document.querySelector('.people-count');
+
+  peopleAdd.forEach((item) => {
+    item.addEventListener('click', () => {
+      const container = item.closest('.rooms__info-counter');
+      const counter = container.querySelector('.rooms__info-description');
+      counter.textContent = Number(counter.textContent) + 1;
+    });
+  });
+
+  peopleMinus.forEach((item) => {
+    item.addEventListener('click', () => {
+      const container = item.closest('.rooms__info-counter');
+      const counter = container.querySelector('.rooms__info-description');
+      if (Number(counter.textContent) === 1) {
+        return;
+      }
+      counter.textContent = Number(counter.textContent) - 1;
+    });
+  });
 
   const phone = document.getElementById('phone');
   const maskOptions = {
@@ -75,7 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
   bookingBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const data = btn.dataset.apps;
-
+      const parent = btn.closest('.rooms__main');
+      const count = parent.querySelector('.rooms__info-counter--count').textContent;
+      console.log(count);
+      peopleCount.textContent = count;
       if (data === 'standart') {
         if (dates.standart.length < 1) {
           notChoised.classList.add('visible');
