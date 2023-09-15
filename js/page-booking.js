@@ -2,11 +2,78 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const btnCloseModal = document.querySelector('.modal__content-close');
   const bookingBtns = document.querySelectorAll('.rooms__booking-btn');
+  const modalDate = document.querySelector('.modal__content-date');
+  const modalType = document.querySelector('.modal__content-type');
+  const calendars = document.querySelectorAll('.calendar');
+  const bookingRemark = document.querySelectorAll('.rooms__booking-remark');
+  const tooltiptextBooking = document.querySelectorAll('.tooltiptext-booking');
+  const tooltipCloseBtn = document.querySelectorAll('.tooltiptext-booking--close-btn');
+
+  bookingRemark.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const parent = e.target.closest('.rooms__booking');
+      const tooltipChild = parent.querySelector('.tooltiptext-booking');
+      tooltiptextBooking.forEach((item) => {
+        if (item === tooltipChild) {
+          tooltipChild.classList.toggle('visible');
+        } else {
+          item.classList.remove('visible');
+        }
+      });
+    });
+  });
+
+  tooltipCloseBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const parent = e.target.closest('.rooms__booking');
+      const tooltipChild = parent.querySelector('.tooltiptext-booking');
+      tooltipChild.classList.remove('visible');
+    });
+  });
+
   let dates = { standart: [], superior: [], suite: [] };
+
+  //Слайдеры
+  const roomsImgs = document.querySelectorAll('.rooms__img');
+
+  roomsImgs.forEach((img) => {
+    new Swiper(img, {
+      slidesPerView: 'auto',
+      navigation: {
+        prevEl: img.querySelector('.rooms__img-prev'),
+        nextEl: img.querySelector('.rooms__img-next'),
+      },
+    });
+  });
 
   bookingBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       modal.classList.add('visible');
+      const data = btn.dataset.apps;
+      if (data === 'standart') {
+        const selectedDates = dates.standart.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
+        const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
+        const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
+        modalType.textContent = capitalizeFirstLetter(data);
+        modalDate.textContent = `${startDate} - ${endDate}`;
+      }
+      if (data === 'superior') {
+        const selectedDates = dates.superior.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
+        const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
+        const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
+        modalType.textContent = capitalizeFirstLetter(data);
+        modalDate.textContent = `${startDate} - ${endDate}`;
+      }
+      if (data === 'suite') {
+        const selectedDates = dates.suite.map((dateStr) => moment(dateStr, 'DD.MM.YYYY'));
+        const startDate = moment.min(selectedDates).format('DD.MM.YYYY');
+        const endDate = moment.max(selectedDates).format('DD.MM.YYYY');
+        modalType.textContent = capitalizeFirstLetter(data);
+        modalDate.textContent = `${startDate} - ${endDate}`;
+      }
+      calendars.forEach((calendar) => {
+        calendar.classList.remove('visible');
+      });
     });
   });
 
@@ -14,10 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('visible');
   });
 
-  var calendars = document.querySelectorAll('.calendar');
   var dateBtn = document.querySelectorAll('.rooms__date-wrapper');
-  var month1El = document.getElementById('month1');
-  var month2El = document.getElementById('month2');
 
   function renderCalendar(date, item) {
     var month1 = moment(date);
@@ -108,15 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           td1.className = 'day';
         }
-      }
-      if (item.dataset.apps === 'standart') {
-        dates.standart.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
-      }
-      if (item.dataset.apps === 'superior') {
-        dates.superior.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
-      }
-      if (item.dataset.apps === 'suite') {
-        dates.suite.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
+        if (date1.isBefore(moment(), 'day')) {
+          td1.classList.add('past'); // Добавляем класс для прошедших дат
+        }
+        if (item.dataset.apps === 'standart') {
+          dates.standart.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
+        }
+        if (item.dataset.apps === 'superior') {
+          dates.superior.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
+        }
+        if (item.dataset.apps === 'suite') {
+          dates.suite.includes(date1.format('DD.MM.YYYY')) ? td1.classList.add('active') : null;
+        }
       }
 
       tr1.appendChild(td1);
@@ -127,6 +194,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       date1.add(1, 'days');
     }
+
+    // Заполняем пустые ячейки в конце первой таблицы, если первый месяц не заканчивается в воскресенье
+    while (date1.weekday() !== 0) {
+      var td1 = document.createElement('td');
+      td1.textContent = '';
+      tr1.appendChild(td1);
+      date1.add(1, 'days');
+    }
+
+    // Добавляем пустые ячейки в начало второй таблицы, если первый месяц заканчивается не в воскресенье
+    // while (date1.weekday() !== 1) {
+    //   var td2 = document.createElement('td');
+    //   td2.textContent = '';
+    //   tr2.appendChild(td2);
+    //   date1.add(1, 'days');
+    // }
+
+    tbody1.appendChild(tr1);
 
     table1.appendChild(thead1);
     table1.appendChild(tbody1);
@@ -152,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var start2 = moment(month2).startOf('month');
     var end2 = moment(month2).endOf('month');
     var date2 = moment(start2).startOf('week');
+
     while (date2.isBefore(end2)) {
       if (date2.weekday() === 0) {
         var tr2 = document.createElement('tr');
@@ -168,6 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
           td2.className = 'day today';
         } else {
           td2.className = 'day';
+        }
+        if (date2.isBefore(moment(), 'day')) {
+          td2.classList.add('past'); // Добавляем класс для прошедших дат
         }
         if (item.dataset.apps === 'standart') {
           dates.standart.includes(date2.format('DD.MM.YYYY')) ? td2.classList.add('active') : null;
@@ -188,8 +277,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       date2.add(1, 'days');
     }
+
+    // Заполняем оставшиеся пустые ячейки в конце таблицы, если второй месяц не начинается с понедельника
+    while (date2.weekday() !== 0) {
+      var td2 = document.createElement('td');
+      td2.textContent = '';
+      tr2.appendChild(td2);
+      date2.add(1, 'days');
+    }
+
+    tbody2.appendChild(tr2);
+
     table2.appendChild(thead2);
     table2.appendChild(tbody2);
+
+    // ...
 
     // Добавляем все элементы календаря в основной контейнер
     const headerCont = document.createElement('div');
@@ -230,26 +332,44 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    let firstClickedDate = null;
+    let secondClickedDate = null;
+    let isRangeSelection = false;
+
     const calendCont = document.querySelectorAll('.calendar__container');
     calendCont.forEach((calend) => {
       calend.addEventListener('click', (e) => {
         const appsType = e.target.closest('.calendar')
           ? e.target.closest('.calendar').dataset.apps
           : null;
-        console.log(appsType);
+
         if (e.target.classList.contains('day')) {
-          console.log('tut');
-          if (appsType === 'standart') {
-            updateDates(e, 'standart');
+          const clickedDate = moment(e.target.dataset.date, 'DD.MM.YYYY');
+
+          // Проверяем, является ли дата прошедшей
+          if (clickedDate.isBefore(moment(), 'day')) {
+            return; // Игнорируем клик на прошедшей дате
           }
 
-          if (appsType === 'superior') {
-            updateDates(e, 'superior');
+          if (!firstClickedDate) {
+            firstClickedDate = clickedDate;
+            isRangeSelection = false;
+            dates[appsType] = [];
+            dates[appsType].push(firstClickedDate.format('DD.MM.YYYY'));
+          } else {
+            if (!secondClickedDate) {
+              secondClickedDate = clickedDate;
+              isRangeSelection = true;
+            } else {
+              firstClickedDate = clickedDate;
+              secondClickedDate = null;
+              isRangeSelection = false;
+              dates[appsType] = [];
+              dates[appsType].push(firstClickedDate.format('DD.MM.YYYY'));
+            }
           }
 
-          if (appsType === 'suite') {
-            updateDates(e, 'suite');
-          }
+          updateCalendarSelection(appsType);
         }
       });
     });
@@ -258,29 +378,31 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCalendar(moment(), item);
     });
 
-    function updateDates(e, type) {
-      if (!dates[type]) {
-        dates[type] = [];
-      }
+    function updateCalendarSelection(type) {
+      const calendar = document.querySelector(`.calendar[data-apps="${type}"]`);
+      const days = calendar.querySelectorAll('.day');
+      days.forEach((day) => {
+        const dateStr = day.dataset.date;
+        const date = moment(dateStr, 'DD.MM.YYYY');
+        const isSelected = dates[type].includes(dateStr);
 
-      if (!dates[type].includes(e.target.dataset.date) && !e.target.classList.contains('active')) {
-        dates[type].push(e.target.dataset.date);
-        e.target.classList.add('active');
-      } else {
-        dates[type] = dates[type].filter((obj) => obj !== e.target.dataset.date);
-        e.target.classList.remove('active');
-      }
+        if (isSelected) {
+          day.classList.add('active');
+        } else {
+          day.classList.remove('active');
+        }
+
+        if (isRangeSelection && firstClickedDate && secondClickedDate) {
+          const isInRange = date.isBetween(firstClickedDate, secondClickedDate, null, '[]');
+          if (isInRange) {
+            day.classList.add('active');
+            dates[type].push(dateStr);
+          }
+        }
+      });
     }
-    // days.forEach((item) => {
-    //   item.addEventListener('click', (e) => {
-    //     item.classList.toggle('active');
-    //     if (item.classList.contains('active')) {
-    //       dates.push(item.dataset.date);
-    //     } else {
-    //       dates = dates.filter((obj) => obj !== item);
-    //     }
-    //     console.log(dates);
-    //   });
-    // });
   });
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 });
