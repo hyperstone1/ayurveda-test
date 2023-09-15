@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bookingBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const data = btn.dataset.apps;
+
       if (data === 'standart') {
         if (dates.standart.length < 1) {
           notChoised.classList.add('visible');
@@ -446,4 +447,27 @@ document.addEventListener('DOMContentLoaded', () => {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  document.addEventListener('click', (e) => {
+    if (
+      !e.target.closest('.tooltiptext-booking') &&
+      !e.target.classList.contains('tooltiptext-booking') &&
+      !e.target.closest('.rooms__booking-remark') &&
+      !e.target.classList.contains('rooms__booking-remark')
+    ) {
+      tooltiptextBooking.forEach((item) => {
+        item.classList.remove('visible');
+      });
+    }
+    if (
+      !e.target.closest('.calendar') &&
+      !e.target.classList.contains('calendar') &&
+      !e.target.classList.contains('rooms__date-wrapper') &&
+      !e.target.closest('.rooms__date-wrapper')
+    ) {
+      calendars.forEach((item) => {
+        item.classList.remove('visible');
+      });
+    }
+  });
 });
