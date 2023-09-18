@@ -6,12 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
+
     <link rel="stylesheet" href="css/set.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/page-booking.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/page-booking.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
 
@@ -197,8 +198,14 @@
           </div>
           <div class="reservation__wrapper">
             <div class="reservation__place">
-              <div class="reservation__place-img">
-                <img src="./images/booking/reservation_info.png" alt="" />
+              <div class="reservation__place-container">
+                <div class="reservation__way--mob">
+                  <div class="reservation__way-title">Как добраться до нас</div>
+                  <div class="reservation__way-link">Подробнее</div>
+                </div>
+                <div class="reservation__place-img">
+                  <img src="./images/booking/reservation_info.png" alt="" />
+                </div>
               </div>
               <div class="reservation__course">
                 <div class="reservation__course-imgs">
@@ -224,6 +231,39 @@
         <div class="rooms__list">
           <div class="rooms__list-item">
             <div class="rooms__img swiper-container">
+              <div class="rooms__control">
+                <div class="rooms__control-pagination"></div>
+                <div class="rooms__control-navigation">
+                  <div class="rooms__img-prev--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="28"
+                      viewBox="0 0 24 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.2347 5.69594L3.48468 13.4085C3.44982 13.4483 3.42216 13.4955 3.40329 13.5476C3.38441 13.5996 3.3747 13.6553 3.3747 13.7116C3.3747 13.7679 3.38441 13.8237 3.40329 13.8757C3.42216 13.9277 3.44982 13.975 3.48468 14.0148L10.2347 21.7273C10.305 21.8077 10.4005 21.8529 10.5 21.8529C10.5995 21.8529 10.6949 21.8077 10.7653 21.7273C10.8357 21.6469 10.8752 21.5379 10.8752 21.4242C10.8752 21.3105 10.8357 21.2014 10.7653 21.121L4.65562 14.1401H20.25C20.3495 14.1401 20.4448 14.095 20.5152 14.0146C20.5855 13.9343 20.625 13.8253 20.625 13.7116C20.625 13.598 20.5855 13.489 20.5152 13.4087C20.4448 13.3283 20.3495 13.2832 20.25 13.2832H4.65562L10.7653 6.30223C10.8357 6.22184 10.8752 6.11279 10.8752 5.99909C10.8752 5.88539 10.8357 5.77634 10.7653 5.69594C10.6949 5.61554 10.5995 5.57038 10.5 5.57038C10.4005 5.57038 10.305 5.61554 10.2347 5.69594Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                  <div class="rooms__img-next--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="28"
+                      viewBox="0 0 25 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.9509 22.3041L20.7009 14.5915C20.7357 14.5517 20.7634 14.5045 20.7823 14.4524C20.8011 14.4004 20.8108 14.3447 20.8108 14.2884C20.8108 14.2321 20.8011 14.1763 20.7823 14.1243C20.7634 14.0723 20.7357 14.025 20.7009 13.9852L13.9509 6.27266C13.8805 6.19226 13.7851 6.14709 13.6855 6.14709C13.586 6.14709 13.4906 6.19226 13.4202 6.27266C13.3499 6.35306 13.3103 6.46211 13.3103 6.57581C13.3103 6.68951 13.3499 6.79856 13.4202 6.87895L19.5299 13.8599H3.93555C3.83609 13.8599 3.74071 13.905 3.67038 13.9854C3.60006 14.0657 3.56055 14.1747 3.56055 14.2884C3.56055 14.402 3.60006 14.511 3.67038 14.5913C3.74071 14.6717 3.83609 14.7168 3.93555 14.7168H19.5299L13.4202 21.6978C13.3499 21.7782 13.3103 21.8872 13.3103 22.0009C13.3103 22.1146 13.3499 22.2237 13.4202 22.3041C13.4906 22.3845 13.586 22.4296 13.6855 22.4296C13.7851 22.4296 13.8805 22.3845 13.9509 22.3041Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="rooms__img-wrapper swiper-wrapper">
                 <div class="rooms__img-slide swiper-slide">
                   <img src="./images/booking/booking_1.png" alt="" />
@@ -347,7 +387,43 @@
                     <span class="rooms__info-title date">Выбрать даты</span>
                   </button>
                   <div data-apps="standart" class="calendar">
+                    <div class="calendar__top">
+                      <span class="calendar__top-title">Выберите даты</span>
+                      <button class="calendar__top-close">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M17.7147 17.7145L6.28613 6.28595M17.7147 6.28595L6.28613 17.7145"
+                            stroke="#22262A"
+                            stroke-width="1.33333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <table class="calendar__week">
+                      <thead>
+                        <tr>
+                          <th>пн</th>
+                          <th>вт</th>
+                          <th>ср</th>
+                          <th>чт</th>
+                          <th>пт</th>
+                          <th>сб</th>
+                          <th>вс</th>
+                        </tr>
+                      </thead>
+                    </table>
                     <div class="calendar__container"></div>
+                    <div class="calendar__bottom">
+                      <div class="calendar__bottom-btn">Подтвердить</div>
+                    </div>
                   </div>
 
                   <div class="rooms__booking">
@@ -400,6 +476,39 @@
 
           <div class="rooms__list-item">
             <div class="rooms__img">
+              <div class="rooms__control">
+                <div class="rooms__control-pagination"></div>
+                <div class="rooms__control-navigation">
+                  <div class="rooms__img-prev--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="28"
+                      viewBox="0 0 24 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.2347 5.69594L3.48468 13.4085C3.44982 13.4483 3.42216 13.4955 3.40329 13.5476C3.38441 13.5996 3.3747 13.6553 3.3747 13.7116C3.3747 13.7679 3.38441 13.8237 3.40329 13.8757C3.42216 13.9277 3.44982 13.975 3.48468 14.0148L10.2347 21.7273C10.305 21.8077 10.4005 21.8529 10.5 21.8529C10.5995 21.8529 10.6949 21.8077 10.7653 21.7273C10.8357 21.6469 10.8752 21.5379 10.8752 21.4242C10.8752 21.3105 10.8357 21.2014 10.7653 21.121L4.65562 14.1401H20.25C20.3495 14.1401 20.4448 14.095 20.5152 14.0146C20.5855 13.9343 20.625 13.8253 20.625 13.7116C20.625 13.598 20.5855 13.489 20.5152 13.4087C20.4448 13.3283 20.3495 13.2832 20.25 13.2832H4.65562L10.7653 6.30223C10.8357 6.22184 10.8752 6.11279 10.8752 5.99909C10.8752 5.88539 10.8357 5.77634 10.7653 5.69594C10.6949 5.61554 10.5995 5.57038 10.5 5.57038C10.4005 5.57038 10.305 5.61554 10.2347 5.69594Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                  <div class="rooms__img-next--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="28"
+                      viewBox="0 0 25 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.9509 22.3041L20.7009 14.5915C20.7357 14.5517 20.7634 14.5045 20.7823 14.4524C20.8011 14.4004 20.8108 14.3447 20.8108 14.2884C20.8108 14.2321 20.8011 14.1763 20.7823 14.1243C20.7634 14.0723 20.7357 14.025 20.7009 13.9852L13.9509 6.27266C13.8805 6.19226 13.7851 6.14709 13.6855 6.14709C13.586 6.14709 13.4906 6.19226 13.4202 6.27266C13.3499 6.35306 13.3103 6.46211 13.3103 6.57581C13.3103 6.68951 13.3499 6.79856 13.4202 6.87895L19.5299 13.8599H3.93555C3.83609 13.8599 3.74071 13.905 3.67038 13.9854C3.60006 14.0657 3.56055 14.1747 3.56055 14.2884C3.56055 14.402 3.60006 14.511 3.67038 14.5913C3.74071 14.6717 3.83609 14.7168 3.93555 14.7168H19.5299L13.4202 21.6978C13.3499 21.7782 13.3103 21.8872 13.3103 22.0009C13.3103 22.1146 13.3499 22.2237 13.4202 22.3041C13.4906 22.3845 13.586 22.4296 13.6855 22.4296C13.7851 22.4296 13.8805 22.3845 13.9509 22.3041Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="rooms__img-wrapper swiper-wrapper">
                 <div class="rooms__img-slide swiper-slide">
                   <img src="./images/booking/booking_1.png" alt="" />
@@ -523,7 +632,43 @@
                     <span class="rooms__info-title date">Выбрать даты</span>
                   </button>
                   <div data-apps="superior" class="calendar">
+                    <div class="calendar__top">
+                      <span class="calendar__top-title">Выберите даты</span>
+                      <button class="calendar__top-close">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M17.7147 17.7145L6.28613 6.28595M17.7147 6.28595L6.28613 17.7145"
+                            stroke="#22262A"
+                            stroke-width="1.33333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <table class="calendar__week">
+                      <thead>
+                        <tr>
+                          <th>пн</th>
+                          <th>вт</th>
+                          <th>ср</th>
+                          <th>чт</th>
+                          <th>пт</th>
+                          <th>сб</th>
+                          <th>вс</th>
+                        </tr>
+                      </thead>
+                    </table>
                     <div class="calendar__container"></div>
+                    <div class="calendar__bottom">
+                      <div class="calendar__bottom-btn">Подтвердить</div>
+                    </div>
                   </div>
 
                   <div class="rooms__booking">
@@ -575,6 +720,39 @@
           </div>
           <div class="rooms__list-item">
             <div class="rooms__img">
+              <div class="rooms__control">
+                <div class="rooms__control-pagination"></div>
+                <div class="rooms__control-navigation">
+                  <div class="rooms__img-prev--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="28"
+                      viewBox="0 0 24 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.2347 5.69594L3.48468 13.4085C3.44982 13.4483 3.42216 13.4955 3.40329 13.5476C3.38441 13.5996 3.3747 13.6553 3.3747 13.7116C3.3747 13.7679 3.38441 13.8237 3.40329 13.8757C3.42216 13.9277 3.44982 13.975 3.48468 14.0148L10.2347 21.7273C10.305 21.8077 10.4005 21.8529 10.5 21.8529C10.5995 21.8529 10.6949 21.8077 10.7653 21.7273C10.8357 21.6469 10.8752 21.5379 10.8752 21.4242C10.8752 21.3105 10.8357 21.2014 10.7653 21.121L4.65562 14.1401H20.25C20.3495 14.1401 20.4448 14.095 20.5152 14.0146C20.5855 13.9343 20.625 13.8253 20.625 13.7116C20.625 13.598 20.5855 13.489 20.5152 13.4087C20.4448 13.3283 20.3495 13.2832 20.25 13.2832H4.65562L10.7653 6.30223C10.8357 6.22184 10.8752 6.11279 10.8752 5.99909C10.8752 5.88539 10.8357 5.77634 10.7653 5.69594C10.6949 5.61554 10.5995 5.57038 10.5 5.57038C10.4005 5.57038 10.305 5.61554 10.2347 5.69594Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                  <div class="rooms__img-next--mob">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="28"
+                      viewBox="0 0 25 28"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.9509 22.3041L20.7009 14.5915C20.7357 14.5517 20.7634 14.5045 20.7823 14.4524C20.8011 14.4004 20.8108 14.3447 20.8108 14.2884C20.8108 14.2321 20.8011 14.1763 20.7823 14.1243C20.7634 14.0723 20.7357 14.025 20.7009 13.9852L13.9509 6.27266C13.8805 6.19226 13.7851 6.14709 13.6855 6.14709C13.586 6.14709 13.4906 6.19226 13.4202 6.27266C13.3499 6.35306 13.3103 6.46211 13.3103 6.57581C13.3103 6.68951 13.3499 6.79856 13.4202 6.87895L19.5299 13.8599H3.93555C3.83609 13.8599 3.74071 13.905 3.67038 13.9854C3.60006 14.0657 3.56055 14.1747 3.56055 14.2884C3.56055 14.402 3.60006 14.511 3.67038 14.5913C3.74071 14.6717 3.83609 14.7168 3.93555 14.7168H19.5299L13.4202 21.6978C13.3499 21.7782 13.3103 21.8872 13.3103 22.0009C13.3103 22.1146 13.3499 22.2237 13.4202 22.3041C13.4906 22.3845 13.586 22.4296 13.6855 22.4296C13.7851 22.4296 13.8805 22.3845 13.9509 22.3041Z"
+                        fill="#22262A"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="rooms__img-wrapper swiper-wrapper">
                 <div class="rooms__img-slide swiper-slide">
                   <img src="./images/booking/booking_1.png" alt="" />
@@ -698,7 +876,43 @@
                     <span class="rooms__info-title date">Выбрать даты</span>
                   </button>
                   <div data-apps="suite" class="calendar">
+                    <div class="calendar__top">
+                      <span class="calendar__top-title">Выберите даты</span>
+                      <button class="calendar__top-close">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M17.7147 17.7145L6.28613 6.28595M17.7147 6.28595L6.28613 17.7145"
+                            stroke="#22262A"
+                            stroke-width="1.33333"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <table class="calendar__week">
+                      <thead>
+                        <tr>
+                          <th>пн</th>
+                          <th>вт</th>
+                          <th>ср</th>
+                          <th>чт</th>
+                          <th>пт</th>
+                          <th>сб</th>
+                          <th>вс</th>
+                        </tr>
+                      </thead>
+                    </table>
                     <div class="calendar__container"></div>
+                    <div class="calendar__bottom">
+                      <div class="calendar__bottom-btn">Подтвердить</div>
+                    </div>
                   </div>
 
                   <div class="rooms__booking">
@@ -775,6 +989,22 @@
             </li>
           </ul>
         </div>
+        <div class="accept__contacts">
+          <div class="accept__contacts-description">
+            Для отмены бронирования необходимо связаться с нашим менеджером
+          </div>
+          <ul class="accept__links--mob">
+            <li class="accept__links-social">
+              <img src="./images//booking/telegram.svg" alt="" />
+            </li>
+            <li class="accept__links-social">
+              <img src="./images//booking/whatup.svg" alt="" />
+            </li>
+            <li class="accept__links-social">
+              <img src="./images//booking/phone.svg" alt="" />
+            </li>
+          </ul>
+        </div>
         <div class="accept__right">
           <div class="accept__right-img">
             <img src="./images/booking/booking_confirm_small.png" alt="" />
@@ -784,7 +1014,12 @@
     </section>
     <section class="flight">
       <div class="flight_container container">
-        <div class="flight__title">Перелёт и встреча</div>
+        <div class="flight__title">
+          <div class="flight__title-text">Перелёт и встреча</div>
+          <div class="flight__icon--mob">
+            <img src="./images/booking/plane.svg" alt="" />
+          </div>
+        </div>
         <div class="flight__description">
           Достаточно сообщить нам дату своего прилета и номер рейса, и мы организуем комфортабельный
           трансфер. По прилету в аэропорту наших гостей встретит такси с табличкой, на которой будет
@@ -881,6 +1116,33 @@
         <div class="not_choised__text">Вам необходимо выбрать даты, чтобы забронировать номер.</div>
       </div>
     </div>
+    <!-- <div class="modal_calendar">
+      <div class="modal_calendar_container">
+        <div class="modal_calendar__top">
+          <div class="modal_calendar__top-title">Выберите даты</div>
+          <button class="modal_calendar__top-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M17.7147 17.7145L6.28613 6.28595M17.7147 6.28595L6.28613 17.7145"
+                stroke="#22262A"
+                stroke-width="1.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="modal_calendar-container">
+
+        </div>
+      </div>
+    </div> -->
     <footer class="footer">
       <div class="footer_container container">
         <div class="footer__logo">

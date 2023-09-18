@@ -13,7 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const peopleAdd = document.querySelectorAll('.rooms__info-counter--plus');
   const peopleMinus = document.querySelectorAll('.rooms__info-counter--minus');
   const peopleCount = document.querySelector('.people-count');
+  const calendModalClose = document.querySelector('.calendar__top-close');
+  const calendarBtns = document.querySelectorAll('.calendar__bottom-btn');
 
+  calendarBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      calendars.forEach((calendar) => {
+        calendar.classList.remove('visible');
+      });
+    });
+  });
+  calendModalClose.addEventListener('click', () => {
+    calendars.forEach((calendar) => {
+      calendar.classList.remove('visible');
+    });
+  });
   peopleAdd.forEach((item) => {
     item.addEventListener('click', () => {
       const container = item.closest('.rooms__info-counter');
@@ -86,10 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   roomsImgs.forEach((img) => {
     new Swiper(img, {
-      slidesPerView: 'auto',
+      slidesPerView: 1,
       navigation: {
-        prevEl: img.querySelector('.rooms__img-prev'),
-        nextEl: img.querySelector('.rooms__img-next'),
+        prevEl: img.querySelector('.rooms__img-prev--mob'),
+        nextEl: img.querySelector('.rooms__img-next--mob'),
+      },
+      pagination: {
+        el: '.rooms__control-pagination',
+        type: 'fraction',
+        renderFraction: function (currentClass, totalClass) {
+          return (
+            '<span class="' +
+            currentClass +
+            '"></span>' +
+            '<span class="pagination__separator"></span>  ' +
+            '<span class="' +
+            totalClass +
+            '"></span>'
+          );
+        },
+      },
+
+      breakpoints: {
+        769: {
+          slidesPerView: 'auto',
+          navigation: {
+            prevEl: img.querySelector('.rooms__img-prev'),
+            nextEl: img.querySelector('.rooms__img-next'),
+          },
+        },
       },
     });
   });
@@ -198,6 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
     header2.appendChild(nextButton2);
 
     // Создаем таблицу для первого месяца
+    var table1Parent = document.createElement('div');
+    table1Parent.className = 'calendar__wrapper';
     var table1 = document.createElement('table');
     table1.className = 'calendar-table';
 
@@ -205,6 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
     var tbody1 = document.createElement('tbody');
     var tr1 = document.createElement('tr');
 
+    const headerCont1 = document.createElement('div');
+    headerCont1.className = 'calendar__header';
+    headerCont1.appendChild(header1);
+    table1Parent.append(headerCont1);
     var daysOfWeek = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 
     // Создаем заголовки дней недели
@@ -280,8 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     table1.appendChild(thead1);
     table1.appendChild(tbody1);
+    table1Parent.appendChild(table1);
 
     // Создаем таблицу для второго месяца
+    var table2Parent = document.createElement('div');
+    table2Parent.className = 'calendar__wrapper';
+
     var table2 = document.createElement('table');
     table2.className = 'calendar-table';
 
@@ -289,6 +338,11 @@ document.addEventListener('DOMContentLoaded', () => {
     var tbody2 = document.createElement('tbody');
     var tr2 = document.createElement('tr');
 
+    const headerCont2 = document.createElement('div');
+    headerCont2.className = 'calendar__header';
+    headerCont2.appendChild(header2);
+
+    table2Parent.appendChild(headerCont2);
     // Создаем заголовки дней недели
     for (var i = 0; i < daysOfWeek.length; i++) {
       var th2 = document.createElement('th');
@@ -355,21 +409,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
     table2.appendChild(thead2);
     table2.appendChild(tbody2);
+    table2Parent.appendChild(table2);
 
     // ...
 
     // Добавляем все элементы календаря в основной контейнер
-    const headerCont = document.createElement('div');
-    headerCont.className = 'calendar__header';
-    headerCont.appendChild(header1);
-    headerCont.appendChild(header2);
+
     const container = document.createElement('div');
     container.className = 'calendar__container';
-    container.appendChild(table1);
-    container.appendChild(table2);
+    container.appendChild(table1Parent);
+    container.appendChild(table2Parent);
 
-    calendarContainer.appendChild(headerCont);
     calendarContainer.appendChild(container);
+
+    // Очищаем предыдущий календарь и добавляем новый
+    console.log(item);
+    const calendarCont = item.querySelector('.calendar__container');
+    calendarCont.innerHTML = ''; // Очищаем содержимое предыдущего календаря
+    calendarCont.appendChild(calendarContainer);
+  }
+
+  function renderCalendarModal(date, item) {
+    // Создаем основной контейнер календаря
+    var calendarContainer = document.createElement('div');
+    calendarContainer.className = 'calendar-container';
+
+    // Создаем заголовки и таблицы для каждого месяца в течение года
+    for (var i = 0; i < 12; i++) {
+      var month = moment(date).add(i, 'months');
+
+      var header = document.createElement('div');
+      header.className = 'calendar-header-wrapper';
+
+      var monthSpan = document.createElement('span');
+      monthSpan.textContent = month.format('MMMM YYYY');
+
+      header.appendChild(monthSpan);
+
+      calendarContainer.appendChild(header);
+
+      // Создаем таблицу для текущего месяца
+      var tableParent = document.createElement('div');
+      tableParent.className = 'calendar__wrapper';
+      var table = document.createElement('table');
+      table.className = 'calendar-table';
+
+      var tbody = document.createElement('tbody');
+
+      const headerCont = document.createElement('div');
+      headerCont.className = 'calendar__header';
+      headerCont.appendChild(header);
+      tableParent.append(headerCont);
+
+      // Создаем ячейки с датами для текущего месяца
+      var currentDate = moment(month).startOf('month');
+      var endDate = moment(month).endOf('month');
+      var startDate = moment(currentDate).startOf('week');
+
+      while (startDate.isBefore(endDate) || startDate.isSame(endDate, 'day')) {
+        var tr = document.createElement('tr');
+
+        for (var j = 0; j < 7; j++) {
+          var td = document.createElement('td');
+          if (startDate.isBefore(currentDate) || startDate.isAfter(endDate)) {
+            td.textContent = '';
+          } else {
+            td.textContent = startDate.format('D');
+            td.dataset.date = startDate.format('DD.MM.YYYY');
+            if (startDate.isSame(moment(), 'day')) {
+              td.className = 'day today';
+            } else {
+              td.className = 'day';
+            }
+            if (startDate.isBefore(moment(), 'day')) {
+              td.classList.add('past'); // Добавляем класс для прошедших дат
+            }
+            if (item.dataset.apps === 'standart') {
+              dates.standart.includes(startDate.format('DD.MM.YYYY'))
+                ? td.classList.add('active')
+                : null;
+            }
+            if (item.dataset.apps === 'superior') {
+              dates.superior.includes(startDate.format('DD.MM.YYYY'))
+                ? td.classList.add('active')
+                : null;
+            }
+            if (item.dataset.apps === 'suite') {
+              dates.suite.includes(startDate.format('DD.MM.YYYY'))
+                ? td.classList.add('active')
+                : null;
+            }
+          }
+          tr.appendChild(td);
+          startDate.add(1, 'days');
+        }
+
+        tbody.appendChild(tr);
+      }
+
+      table.appendChild(tbody);
+      tableParent.appendChild(table);
+
+      calendarContainer.appendChild(tableParent);
+    }
 
     // Очищаем предыдущий календарь и добавляем новый
     console.log(item);
@@ -441,10 +583,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    calendars.forEach((item, _) => {
-      renderCalendar(moment(), item);
-    });
-
     function updateCalendarSelection(type) {
       const calendar = document.querySelector(`.calendar[data-apps="${type}"]`);
       const days = calendar.querySelectorAll('.day');
@@ -473,6 +611,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  function handleResize() {
+    const width = window.innerWidth;
+    if (width < 769) {
+      calendars.forEach((item, _) => {
+        renderCalendarModal(moment(), item);
+      });
+    } else {
+      calendars.forEach((item, _) => {
+        renderCalendar(moment(), item);
+      });
+    }
+  }
+  window.addEventListener('load', handleResize);
+
   document.addEventListener('click', (e) => {
     if (
       !e.target.closest('.tooltiptext-booking') &&
@@ -488,8 +640,14 @@ document.addEventListener('DOMContentLoaded', () => {
       !e.target.closest('.calendar') &&
       !e.target.classList.contains('calendar') &&
       !e.target.classList.contains('rooms__date-wrapper') &&
-      !e.target.closest('.rooms__date-wrapper')
+      !e.target.closest('.rooms__date-wrapper') &&
+      !e.target.classList.contains('btn-next') &&
+      !e.target.closest('.btn-next') &&
+      !e.target.classList.contains('btn-prev') &&
+      !e.target.closest('.btn-prev')
     ) {
+      console.log('tut');
+      console.log(e.target);
       calendars.forEach((item) => {
         item.classList.remove('visible');
       });

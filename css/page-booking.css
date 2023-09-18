@@ -85,6 +85,7 @@
   text-decoration-line: underline;
 }
 .reservation__content-img {
+  align-self: end;
   position: relative;
   width: 63rem;
   height: 66.4rem;
@@ -208,6 +209,7 @@
   height: 67.9rem;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 1rem;
 }
 .rooms__img-prev {
   position: absolute;
@@ -227,6 +229,7 @@
 }
 .rooms__img img {
   height: 100%;
+  object-fit: cover;
 }
 .rooms__content {
   width: 63.4rem;
@@ -320,6 +323,9 @@
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.2; /* 21.6px */
+}
+.calendar__bottom {
+  display: none;
 }
 .rooms__info-counter--plus,
 .rooms__info-counter--minus {
@@ -459,6 +465,7 @@
   line-height: 1.2; /* 60px */
   letter-spacing: 1.5px;
 }
+
 .flight__description {
   width: 73.4rem;
   color: #22262a;
@@ -545,6 +552,12 @@
   width: 100%;
   height: 4.6rem;
   border-bottom: 1px solid #dadada;
+}
+.calendar__top {
+  display: none;
+}
+.calendar__week {
+  display: none;
 }
 form {
   display: flex;
@@ -730,6 +743,14 @@ form {
   width: 100%;
   height: 100%;
 }
+.rooms__img-slide {
+  position: relative;
+  width: 100%;
+  height: 67.9rem;
+}
+.rooms__control {
+  display: none;
+}
 .tooltiptext-booking {
   position: absolute;
   top: 5rem;
@@ -848,7 +869,13 @@ form {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
   cursor: pointer;
+}
+.not_choised-close svg {
+  width: 100%;
+  height: 100%;
 }
 .not_choised__title {
   color: #22262a;
@@ -867,6 +894,517 @@ form {
   line-height: 1.4;
   letter-spacing: 0.98px;
 }
-
+.reservation__way--mob {
+  display: none;
+}
+.accept__contacts {
+  display: none;
+}
+.flight__icon--mob {
+  display: none;
+}
+.calendar__wrapper:nth-of-type(1) .calendar__header {
+  justify-content: flex-start;
+}
+.calendar__wrapper:nth-of-type(2) .calendar__header {
+  justify-content: flex-end;
+}
 @media (max-width: 48em) {
+  .reservation_container {
+    margin-top: 23.2rem;
+    height: 100%;
+    padding: 0;
+  }
+  .reservation__title {
+    /* position: relative; */
+  }
+  .reservation__content {
+    flex-direction: column;
+    align-items: start;
+  }
+  .reservation__content-img {
+    margin-top: 7rem;
+    order: 1;
+    width: 61.6rem;
+    height: 54.8rem;
+    border-radius: 1rem;
+  }
+  .reservation__way {
+    display: none;
+  }
+  .reservation__wrapper {
+    order: 3;
+    width: 100%;
+  }
+  .reservation__place {
+    order: 2;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  .reservation__course {
+    padding: 0 3rem;
+    align-self: flex-start;
+    margin-right: 0;
+  }
+  .reservation__course-info {
+    width: 28rem;
+    font-size: 3rem;
+  }
+  .reservation__course-imgs--wrapper {
+    width: 11.2rem;
+    height: 11.2rem;
+  }
+  .reservation__course-imgs--wrapper img {
+    width: 10.02rem;
+    height: 10.02rem;
+  }
+  .reservation__place-img {
+    width: 42.4rem;
+    height: 23.6rem;
+    border-radius: 16.4rem;
+  }
+  .reservation__place-img img {
+    width: 40.9rem;
+    height: 22.2rem;
+    border-radius: 16.4rem;
+  }
+  .reservation__content-description {
+    margin: 7rem 0;
+    width: 100%;
+    order: 1;
+    font-size: 4rem;
+  }
+  .reservation__way--mob {
+    display: block;
+    width: 28rem;
+  }
+  .reservation__place-container {
+    padding: 0 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .reservation__way-title {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2; /* 24px */
+  }
+  .rooms__list-item {
+    flex-direction: column-reverse;
+  }
+  .rooms__list-item:nth-of-type(even) {
+    flex-direction: column-reverse;
+  }
+  .rooms__list {
+    gap: 7rem;
+  }
+  .rooms__img {
+    width: 100%;
+    height: auto;
+  }
+  .rooms__content-count--icon {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+  .rooms__content-count--info {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.29; /* 19.35px */
+  }
+  .rooms__content {
+    width: 100%;
+    gap: 2rem;
+  }
+  .rooms__content-title {
+    font-size: 9rem;
+    font-weight: 300;
+    line-height: 1.2; /* 54px */
+    letter-spacing: 0.27rem;
+  }
+  .rooms__content-description {
+    font-size: 3rem;
+  }
+  .rooms__main {
+    gap: 5rem;
+  }
+  .rooms__price {
+    gap: 2rem;
+    font-size: 3rem;
+  }
+  .rooms__price-number {
+    font-size: 4rem;
+  }
+  .rooms__info {
+    gap: 3rem;
+  }
+  .rooms__info-wrapper {
+    gap: 2rem;
+  }
+  .rooms__info-title {
+    font-size: 3rem;
+    width: fit-content;
+  }
+  .rooms__info-description {
+    font-size: 3.6rem;
+  }
+  .rooms__date {
+    justify-content: space-between;
+  }
+  .rooms__info-counter {
+    gap: 4rem;
+  }
+  .rooms__date-icon {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .rooms__date-wrapper {
+    gap: 1.6rem;
+  }
+  .rooms__info-title {
+    font-size: 3rem;
+  }
+  .rooms__booking-btn {
+    width: 29rem;
+    height: 7.8rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    padding: 1.8rem 4.4rem;
+  }
+  .rooms__booking {
+    gap: 1rem;
+  }
+  .rooms__booking-remark {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .accept_container {
+    flex-direction: column;
+  }
+  .accept__wrapper {
+    order: 2;
+  }
+  .accept__content {
+    order: 1;
+  }
+  .accept__img {
+    width: 68.8rem;
+    height: 45.6rem;
+  }
+  .accept__contacts {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .accept__content-description {
+    display: none;
+  }
+  .accept__links {
+    display: none;
+  }
+  .accept__contacts-description {
+    color: #22262a;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.25; /* 25px */
+  }
+  .accept__links--mob {
+    display: flex;
+    gap: 5rem;
+  }
+  .accept__links-social {
+    width: 10rem;
+    height: 10rem;
+  }
+  .accept__right {
+    display: none;
+  }
+  .flight_container {
+    width: 68.6rem;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 2rem 3rem 3rem;
+    border-radius: 1rem;
+  }
+  .flight__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #22262a;
+    font-size: 6.5rem;
+    font-weight: 300;
+    line-height: 1.2; /* 42px */
+    letter-spacing: 0.1rem;
+  }
+  .flight__title-text {
+  }
+  .flight__icon {
+    display: none;
+  }
+  .flight__description {
+    padding: 0 1rem 0 0;
+    width: 100%;
+    color: #22262a;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.4; /* 21px */
+  }
+  .flight__icon--mob {
+    margin-top: 0.8rem;
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .not_choised {
+    width: 68.6rem;
+    padding: 0;
+    background: #f8f8f8;
+    border-radius: 1rem;
+  }
+  .not_choised-container {
+    padding: 8rem 6.8rem;
+    border-radius: 1rem;
+    background: #f8f8f8;
+  }
+  .not_choised-close {
+    top: 2rem;
+    right: 2rem;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .not_choised__title {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.2; /* 36px */
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+  }
+  .not_choised-container {
+    gap: 1.6rem;
+  }
+  .not_choised__text {
+    width: 44rem;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.4; /* 16.8px */
+  }
+  .not_choised-container {
+    height: auto;
+  }
+  .tooltiptext-booking {
+    padding: 3rem;
+    width: 51.4rem;
+    top: 9rem;
+    right: -1rem;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.4; /* 21px */
+  }
+  .tooltiptext-booking::after {
+    left: auto;
+    right: 0.6rem;
+    border-width: 2.3rem;
+    border-bottom-width: 4rem;
+  }
+  .tooltiptext-booking--close-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .rooms__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+  }
+  .rooms__control-navigation {
+    position: relative;
+    display: flex;
+    gap: 4rem;
+  }
+  .rooms__control-navigation::after {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+
+    width: 1px;
+    height: 7.45rem;
+    transform: rotate(15deg) translate(-50%, 0);
+    background: var(--black, #22262a);
+  }
+  .rooms__img-prev,
+  .rooms__img-next {
+    display: none;
+  }
+  .rooms__img-prev--mob,
+  .rooms__img-next--mob {
+    width: 4.8rem;
+    height: 5.4rem;
+  }
+  .rooms__img-prev--mob svg,
+  .rooms__img-next--mob svg {
+    width: 100%;
+    height: 100%;
+  }
+  .rooms__control-pagination {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .pagination__separator {
+    display: inline-block;
+    width: 4rem;
+    height: 1px;
+    background: var(--black-secondary, rgba(34, 38, 42, 0.6));
+  }
+  .rooms__img-slide {
+    width: 100%;
+    height: 61.2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+  .calendar__container {
+    width: 100%;
+    flex-direction: column;
+    padding-top: 5rem;
+    overflow-y: auto;
+  }
+  .calendar {
+    position: fixed;
+    z-index: 13;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .calendar__top {
+    padding: 9.8rem 5.2rem 9.8rem 5.2rem;
+    font-size: 9rem;
+    font-weight: 300;
+    line-height: 1.2; /* 54px */
+    letter-spacing: 1.35px;
+  }
+  .calendar__top-close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .calendar__top-close svg {
+    width: 100%;
+    height: 100%;
+  }
+  .calendar-table td {
+    width: 10rem;
+    height: 10rem;
+    padding: 3.4rem 3rem;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 3.2rem; /* 88.889% */
+    text-transform: uppercase;
+  }
+  .calendar__week {
+    padding: 0 3rem;
+  }
+  .calendar__week thead tr th {
+    width: 10rem;
+    height: 6rem;
+    padding: 0.4rem 3rem;
+    font-size: 3.6rem;
+  }
+  .calendar__wrapper:nth-of-type(1) .calendar__header {
+    justify-content: start;
+  }
+  .calendar__wrapper:nth-of-type(2) .calendar__header {
+    justify-content: start;
+  }
+  .calendar__header {
+    justify-content: start;
+    padding: 0 3rem;
+  }
+  .btn-prev,
+  .btn-next {
+    display: none;
+  }
+  .calendar__week {
+    display: block;
+    padding: 0 3rem;
+    width: 100%;
+    background: #f8f8f8;
+  }
+  .calendar-header-wrapper span {
+    padding: 0 3rem;
+    font-size: 3.6rem;
+  }
+  .calendar__header {
+    font-size: 3.6rem;
+  }
+  .calendar-table {
+    width: 100%;
+  }
+  .calendar-table tbody {
+    display: block;
+    width: 100%;
+    padding: 0 3rem;
+  }
+  .calendar__top {
+    display: block;
+  }
+  .calendar__week {
+    display: block;
+  }
+  .calendar-container {
+    gap: 7rem;
+  }
+  .calendar-header-wrapper {
+    margin-bottom: 0;
+    list-style: 1;
+  }
+  .day {
+    border-color: #fff;
+  }
+  .calendar__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .calendar__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 11.8rem;
+    background: #f8f8f8;
+  }
+  .calendar__bottom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32.8rem;
+    padding: 1.8rem 4.4rem;
+    gap: 2rem;
+    border-radius: 3rem;
+    background: #b0008e;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.4; /* 21px */
+  }
 }
